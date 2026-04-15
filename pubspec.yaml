@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_localizations:
     sdk: flutter
-  syncfusion_flutter_charts: ^25.1.35
+  syncfusion_flutter_charts: ^33.1.49
   hive: ^2.2.3
   hive_flutter: ^1.1.0
 
