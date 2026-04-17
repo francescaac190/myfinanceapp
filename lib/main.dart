@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:myfinanceapp/core/theme/app_colors.dart';
 import 'package:myfinanceapp/model/add_date.dart';
 import 'package:myfinanceapp/screens/home_main.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -30,9 +31,7 @@ class MyApp extends StatelessWidget {
       },
       debugShowCheckedModeBanner: false,
       title: 'MyFinance',
-      theme: ThemeData(
-        colorScheme: ColorScheme.light().copyWith(primary: Colors.red),
-      ),
+      theme: AppTheme.dark,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
