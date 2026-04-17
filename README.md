@@ -1,14 +1,15 @@
 # 💰 Finova — Personal Finance App
 
-> **Status:** 🚧 Refactoring — building in public
+> **Status:** 🚧 In progress — building in public
 > **Started:** April 2026
-> **Target:** Flutter app with Clean Architecture, tests, and CI/CD
+> **Target launch:** June 12, 2026
+> **Goal:** Flutter app for senior Flutter roles
 
-A personal finance management app built with Flutter. This repo is both the app itself and the **plan I'm following to build it**. Every section below is a milestone — checked off as I ship it.
+A personal finance management app built with Flutter and Clean Architecture. This README is a living document — milestones get checked off as they ship.
 
 <br />
 
-## 🎯 What this app will do
+## 🎯 What this app does
 
 - Track balances across multiple accounts (checking, savings, cash, credit cards)
 - Log income and expenses with categories
@@ -20,187 +21,301 @@ A personal finance management app built with Flutter. This repo is both the app 
 
 ## 🖼️ Design
 
-The full UI is designed in Figma. Screens included: Home, Bills, Savings, Profile, Wallet, Budget Limits, Set Budget Limit.
+The full UI is designed in Figma. Screens: Home, Bills, Savings, Profile, Wallet, Budget Limits, Set Budget Limit.
 
-> 📸 _Screenshots go here once the screens are built. For now, Figma exports; later, real app screenshots._
-
-- [ ] Add Figma screenshots of all 7 screens
-- [ ] Record a short GIF walkthrough once Home screen works
-- [ ] Add a hero image to the top of this README
+> 📸 _Screenshots and demo GIF will be added once screens are built._
 
 <br />
 
 ---
 
-# 📋 Build Plan
+# 🗺️ Roadmap
 
-Building this in **4 phases**. Each phase ships something working before moving to the next.
+**8-week plan · Apr 17 – Jun 12, 2026 · ~10h/week**
 
----
+| Week                      | Phase                     | Milestone                                           |
+| ------------------------- | ------------------------- | --------------------------------------------------- |
+| **Week 1** (Apr 17–23)    | Phase 1 — Foundation      | Project skeleton + design system + shell navigation |
+| **Week 2** (Apr 24–30)    | Phase 2 — First Feature   | Home screen fully working with mock API             |
+| **Week 3** (May 1–7)      | Phase 3a — Core Screens   | Wallet + Bills screens                              |
+| **Week 4** (May 8–14)     | Phase 3b — Core Screens   | Savings + Budget Limits screens                     |
+| **Week 5** (May 15–21)    | Phase 3c — Forms & Detail | Set Budget + Profile + Add Transaction              |
+| **Week 6** (May 22–28)    | Phase 4a — Testing        | Unit tests + widget tests + coverage ≥ 60%          |
+| **Week 7** (May 29–Jun 4) | Phase 4b — Polish         | i18n + CI/CD + accessibility                        |
+| **Week 8** (Jun 5–11)     | Phase 4c — Launch         | Deploy + README + LinkedIn post                     |
 
-## Phase 1 — Foundation (Week 1)
+### Success criteria
 
-Get the project skeleton right before writing any feature code.
-
-- [x] Create Flutter project with Flutter 3.24+
-- [ ] Set up folder structure (feature-first)
-- [x] Add core dependencies to `pubspec.yaml`:
-  - [x] `flutter_bloc` for state management
-  - [x] `go_router` for navigation
-  - [x] `dio` for networking
-  - [x] `get_it` for dependency injection
-  - [x] `flutter_secure_storage` for tokens
-- [ ] Create the design system files:
-  - [x] `app_colors.dart` ✅
-  - [ ] `app_text_styles.dart`
-  - [ ] `app_spacing.dart`
-  - [ ] `app_radius.dart`
-- [x] Set up `AppTheme` in `main.dart`
-- [ ] Add `very_good_analysis` linter
-- [ ] Create a "Hello World" screen using the design system to verify it works
-
-**Goal:** When I run `flutter run`, I see a branded splash screen with the correct colors.
+- [ ] 7 screens built, working with mock data
+- [ ] Clean Architecture with feature-first folder structure
+- [ ] BLoC state management, GoRouter navigation, design system in place
+- [ ] 60%+ test coverage on use cases and BLoCs
+- [ ] CI pipeline running on every PR
+- [ ] Deployed APK on GitHub Releases + demo GIF + polished README
+- [ ] i18n (English + Spanish)
+- [ ] Published on LinkedIn with at least 2 build-in-public posts
 
 <br />
 
 ---
 
-## Phase 2 — Mock API & First Screen (Week 2)
+## Phase 1 — Foundation
 
-Build the Home screen end-to-end using fake data. Proves the architecture works before adding more complexity.
+**Week 1 · Apr 17–23 · Est. 10h**
 
-- [ ] Copy the mock API files into the project:
-  - [ ] Fixtures into `assets/mocks/`
-  - [ ] `api_endpoints.dart`, `api_dtos.dart`, `mock_api_service.dart` into `lib/core/api/`
+Get the project skeleton right. No features yet — just a branded shell with a working bottom nav bar navigating between 5 empty placeholder screens.
+
+**Setup**
+
+- [x] Create Flutter project with proper structure
+- [x] Initialize Git repo
+- [x] Add core dependencies (`flutter_bloc`, `go_router`, `dio`, `get_it`, `flutter_secure_storage`, `equatable`, `decimal`)
+- [ ] Add `very_good_analysis` to `dev_dependencies`
+- [ ] Update `analysis_options.yaml`
+
+**Design system**
+
+- [x] `app_colors.dart` ✅
+- [ ] `app_text_styles.dart` — display, heading, body, caption, label variants
+- [ ] `app_spacing.dart` — xs (4) · sm (8) · md (16) · lg (24) · xl (32) · xxl (48)
+- [ ] `app_radius.dart` — sm (8) · md (12) · lg (16) · xl (20) · full (999)
+- [ ] Wire everything into `AppTheme.dark` in `main.dart`
+
+**Navigation shell**
+
+- [x] `core/navigation/app_shell.dart`
+- [x] `core/navigation/widgets/app_bottom_nav_bar.dart`
+- [x] `core/router/route_names.dart`
+- [x] `core/router/app_router.dart` with `StatefulShellRoute.indexedStack`
+- [ ] 5 placeholder pages: Home, Wallet, Bills, Savings, Profile
+
+**DI + Mock API**
+
+- [ ] `core/di/injection.dart` with `setupDependencies()`
+- [ ] Copy mock API files into `core/api/`
+- [ ] Copy JSON fixtures into `assets/mocks/`
 - [ ] Register `assets/mocks/` in `pubspec.yaml`
-- [ ] Build the **Home screen**:
-  - [ ] Total balance card
-  - [ ] "Spending This Month" card with category breakdown
-  - [ ] Quick actions row (Send / Request / Pay Bills / Top Up)
-  - [ ] Recent transactions list
-  - [ ] Bottom navigation bar
-- [ ] Connect the screen to `MockApiService.getHomeOverview()`
-- [ ] Handle loading state (shimmer or spinner)
-- [ ] Handle error state (retry button)
+- [ ] Register `MockApiService` as lazy singleton
 
-**Goal:** Home screen looks identical to the Figma design, loads data from mocks, handles loading and error states.
+**Main wiring**
+
+- [ ] Update `main.dart` to 3-step structure: init → DI → runApp
+- [ ] `flutter analyze` passes with zero warnings
+- [ ] `flutter run` launches on iOS and Android, all 5 tabs navigate
+
+**Definition of Done**
+
+- [ ] `flutter analyze` clean
+- [ ] `flutter run` works on iOS and Android
+- [ ] All 5 tabs navigate correctly
+- [ ] No hardcoded colors outside `core/theme/`
+- [ ] `main.dart` under 40 lines
+- [ ] Repo is public on GitHub
 
 <br />
 
 ---
 
-## Phase 3 — Core Features (Weeks 3–5)
+## Phase 2 — First Feature (Home)
 
-Build the remaining screens one by one. Each screen follows the same pattern as Home.
+**Week 2 · Apr 24–30 · Est. 12h**
 
-### Wallet screen
+Build the Home screen end-to-end following the full Clean Architecture pattern (data → domain → presentation). This is the template every other feature copies.
 
-- [ ] List of accounts with balances
-- [ ] Total balance header with trend
-- [ ] Card visual for each account (VISA/Mastercard styling)
-- [ ] Connect to `MockApiService.getAccounts()`
+**Domain layer**
 
-### Bills screen
+- [ ] Entities: `HomeOverview`, `SpendingCategory`, `QuickAction`, `RecentTransaction`
+- [ ] `HomeRepository` abstract class
+- [ ] `GetHomeOverviewUseCase`
+
+**Data layer**
+
+- [ ] `HomeOverviewDto` matching mock JSON
+- [ ] `HomeRepositoryImpl` mapping DTO → entity
+- [ ] Register in `injection.dart`
+
+**BLoC**
+
+- [ ] Events: `LoadHomeOverview`, `RefreshHomeOverview`
+- [ ] States: `HomeInitial`, `HomeLoading`, `HomeLoaded`, `HomeError`
+- [ ] `HomeBloc` wired to use case
+- [ ] 3 BLoC unit tests
+
+**UI**
+
+- [ ] Reusable widgets: `AppCard`, `MoneyText`, `TrendBadge`
+- [ ] `HomePage` with greeting, balance card, spending card, quick actions, recent transactions
+- [ ] Loading state (shimmer or skeleton)
+- [ ] Error state with retry button
+- [ ] Pull-to-refresh
+
+**Definition of Done**
+
+- [ ] Home screen matches Figma design
+- [ ] Loading, error, and success states all work
+- [ ] Pull-to-refresh triggers new data load
+- [ ] 3+ BLoC unit tests pass
+- [ ] Zero hardcoded colors/sizes in `features/home/`
+- [ ] At least 5 meaningful commits
+
+<br />
+
+---
+
+## Phase 3 — Core Screens
+
+**Weeks 3–5 · May 1–21 · Est. 30h total**
+
+Each screen follows the same 5-step recipe from Phase 2: domain → data → BLoC → UI → connect + test states.
+
+### Week 3 — Wallet + Bills (May 1–7)
+
+**Wallet screen**
+
+- [ ] Accounts list with card-style design (VISA/Mastercard gradients)
+- [ ] Total balance header with trend badge
+- [ ] Quick actions: Add money / Transfer / Pay
+- [ ] Recent transactions section
+
+**Bills screen**
 
 - [ ] Summary card with paid/pending/overdue totals
-- [ ] Category breakdown chart (`fl_chart`)
-- [ ] Upcoming bills list
-- [ ] Overdue alert banner (if any)
-- [ ] Mark-as-paid flow
+- [ ] Donut chart for category breakdown (`fl_chart`)
+- [ ] Upcoming bills list with days-until-due badges
+- [ ] Overdue alert banner
+- [ ] Mark-as-paid bottom sheet
 
-### Savings screen
+### Week 4 — Savings + Budget Limits (May 8–14)
 
-- [ ] Total saved card with trend
-- [ ] Goal cards with progress bars
-- [ ] "Create New Goal" button + form
-- [ ] Add contribution flow
+**Savings screen**
 
-### Budget Limits screen
+- [ ] Total saved card with monthly trend
+- [ ] Goal cards with progress bars and contribution amounts
+- [ ] "Create New Goal" floating button → form bottom sheet
+- [ ] Empty state when no goals exist
 
-- [ ] Monthly spending summary with chart
-- [ ] List of budgets with progress bars
-- [ ] Color changes based on state (OK / WARNING / CRITICAL / EXCEEDED)
-- [ ] Tap to edit a budget
+**Budget Limits screen**
 
-### Set Budget Limit screen
+- [ ] Monthly spending summary with donut chart
+- [ ] Budget list with color-coded progress bars
+- [ ] State logic: OK / WARNING / CRITICAL / EXCEEDED
+- [ ] Tap to edit → navigates to Set Budget screen
+
+### Week 5 — Forms + Details (May 15–21)
+
+**Set Budget Limit screen**
 
 - [ ] Category picker
-- [ ] Amount input
+- [ ] Large amount input with currency formatting
 - [ ] Period toggle (Weekly / Monthly)
-- [ ] Threshold switches (Warning at 70%, Critical at 90%)
-- [ ] Save button
+- [ ] Threshold switches (70% warning, 90% critical)
+- [ ] Form validation + error states
+- [ ] Save button → POST to mock API
 
-### Profile screen
+**Profile screen**
 
-- [ ] User info header
+- [ ] User header with avatar
 - [ ] Linked accounts section
-- [ ] Settings (Notifications, Currency, Language)
-- [ ] Security (Face ID, Change PIN, Change Password)
-- [ ] Logout button
+- [ ] Settings group (Notifications, Currency, Language)
+- [ ] Security group (Face ID, Change PIN, Change Password)
+- [ ] Logout button with confirmation dialog
 
-**Goal:** All 7 screens from the Figma design are built and working with mock data.
+**Add Transaction flow**
 
-<br />
+- [ ] Amount input with +/- toggle (income vs expense)
+- [ ] Category picker, account picker, date picker, notes field
+- [ ] Submit → mock API → return to Home with refreshed data
 
----
+**Definition of Done for Phase 3**
 
-## Phase 4 — Quality & Polish (Week 6)
-
-This is what separates a "school project" from a portfolio piece. **Don't skip this phase.**
-
-### Testing
-
-- [ ] Add `flutter_test`, `bloc_test`, `mocktail` to `dev_dependencies`
-- [ ] Write unit tests for at least 3 BLoCs (Home, Budgets, Transactions)
-- [ ] Write widget tests for at least 2 critical screens
-- [ ] Aim for 60%+ coverage
-
-### CI/CD
-
-- [ ] Add GitHub Actions workflow (`.github/workflows/ci.yml`)
-- [ ] CI runs: `flutter analyze`, `flutter test`, `dart format --set-exit-if-changed`
-- [ ] Add a CI status badge to this README
-
-### i18n
-
-- [ ] Set up `flutter_localizations`
-- [ ] Create `.arb` files for English and Spanish
-- [ ] Extract all visible strings
-
-### Accessibility
-
-- [ ] Verify minimum 48×48 tap targets on buttons
-- [ ] Add `Semantics` labels to custom widgets
-- [ ] Test with large font sizes enabled
-
-### Documentation
-
-- [ ] Take screenshots of every screen → add to this README
-- [ ] Record a short demo GIF → add to top of README
-- [ ] Write a simple architecture explanation in `docs/ARCHITECTURE.md`
-- [ ] Update this README to remove the "build plan" framing and make it portfolio-facing
-
-### Deploy
-
-- [ ] Build release APK
-- [ ] Attach APK to a GitHub Release
-- [ ] Add download link to this README
-
-**Goal:** Recruiters can open this repo, see what it is in 10 seconds, and download a working APK.
+- [ ] All 7 screens built and pixel-close to Figma
+- [ ] Every screen has loading / error / empty states
+- [ ] Navigation between screens works with proper back stacks
+- [ ] At least 2 BLoC unit tests per feature (14+ total)
+- [ ] Demo video recorded of a full user flow
 
 <br />
 
 ---
 
-# 🛠️ Tech Stack (the plan)
+## Phase 4 — Testing, Polish & Launch
+
+**Weeks 6–8 · May 22–Jun 11 · Est. 25h total**
+
+### Week 6 — Testing (May 22–28)
+
+- [ ] Add `bloc_test`, `mocktail`, `golden_toolkit` to `dev_dependencies`
+- [ ] Use case tests: success + failure paths, target 90%+ coverage on domain layer
+- [ ] BLoC tests: state transition tests with `bloc_test`, cover error emissions
+- [ ] Widget tests for 2 critical screens (Home, Budget Limits)
+- [ ] Run `flutter test --coverage`, generate HTML report
+- [ ] Tag commit: `v0.4.0-tests-complete`
+
+**Definition of Done**
+
+- [ ] Total coverage ≥ 60%, domain layer ≥ 90%
+- [ ] All tests pass locally, no flaky tests
+
+### Week 7 — Polish (May 29–Jun 4)
+
+**i18n**
+
+- [ ] Add `flutter_localizations` + `intl`
+- [ ] Create `lib/l10n/app_en.arb` and `app_es.arb`
+- [ ] Extract all hardcoded strings
+- [ ] Language switcher in Profile settings
+- [ ] Test with device set to Spanish
+
+**CI/CD**
+
+- [ ] Create `.github/workflows/ci.yml` (format → analyze → test → build APK)
+- [ ] Add CI status badge to README
+- [ ] Verify CI runs green on a PR
+
+**Accessibility + Performance**
+
+- [ ] All interactive elements ≥ 48×48
+- [ ] `Semantics` labels on custom widgets
+- [ ] Verify 60fps on real device, check for unnecessary rebuilds
+- [ ] Add `const` constructors everywhere possible
+
+**Definition of Done**
+
+- [ ] App works in English and Spanish
+- [ ] CI badge shows green
+- [ ] Accessibility inspector shows no warnings
+- [ ] 60fps on real device
+
+### Week 8 — Launch (Jun 5–11)
+
+- [ ] Export high-quality screenshots (every screen) → `docs/images/`
+- [ ] Record 30-second demo GIF (Kap / ScreenToGif), optimize to <10MB
+- [ ] Rewrite README: add hero image, demo GIF, screen gallery, architecture decisions
+- [ ] Build release APK: `flutter build apk --release`
+- [ ] Tag `v1.0.0`, create GitHub Release with changelog + APK attached
+- [ ] Write `docs/ARCHITECTURE.md` with Mermaid diagram
+- [ ] LinkedIn launch post with demo GIF and repo link
+
+**Definition of Done**
+
+- [ ] `v1.0.0` tagged and released
+- [ ] README has screenshots, GIF, and download link
+- [ ] APK downloadable from GitHub Releases
+- [ ] LinkedIn post live
+
+<br />
+
+---
+
+# 🛠️ Tech Stack
 
 | Category         | Choice                              | Why                                            |
 | ---------------- | ----------------------------------- | ---------------------------------------------- |
-| Framework        | Flutter 3.24                        | Cross-platform, my strongest stack             |
+| Framework        | Flutter 3.24                        | Cross-platform, primary stack                  |
 | State management | BLoC                                | Explicit events/states, great for interviews   |
 | Navigation       | go_router                           | Declarative, supports deep links + auth guards |
 | Networking       | Dio                                 | Industry standard, great interceptors          |
-| DI               | get_it                              | Simple, no code generation needed initially    |
+| DI               | get_it                              | Simple, no code generation needed              |
 | Storage          | flutter_secure_storage + Hive       | Tokens secure, cache fast                      |
 | Money            | decimal package                     | No float precision bugs                        |
 | Charts           | fl_chart                            | Flexible, works well with custom theme         |
@@ -210,21 +325,20 @@ This is what separates a "school project" from a portfolio piece. **Don't skip t
 
 ---
 
-# 📂 Folder structure (target)
-
-Where I'm heading. Not everything exists yet — growing into this structure feature by feature.
+# 📂 Folder Structure
 
 ```
 lib/
 ├── core/
-│   ├── theme/          # AppColors ✅, AppTextStyles, AppSpacing
-│   ├── api/            # Endpoints, DTOs, MockApiService ✅
+│   ├── theme/          # AppColors ✅, AppTextStyles, AppSpacing, AppRadius
+│   ├── api/            # Endpoints, DTOs, MockApiService
 │   ├── errors/         # Failure sealed class
-│   ├── router/         # GoRouter config
+│   ├── router/         # GoRouter config ✅
+│   ├── navigation/     # AppShell, BottomNavBar ✅
 │   └── di/             # get_it setup
 │
 ├── features/
-│   ├── home/
+│   ├── home/           # presentation/screens ✅
 │   ├── wallet/
 │   ├── bills/
 │   ├── savings/
@@ -235,16 +349,16 @@ lib/
 └── main.dart
 ```
 
-Each feature folder will eventually have `data/`, `domain/`, and `presentation/` subfolders. Added as each feature is built — no empty folders upfront.
+Each feature folder has `data/`, `domain/`, and `presentation/` subfolders — added as each feature is built.
 
 <br />
 
 ---
 
-# ▶️ How to run (once Phase 1 is done)
+# ▶️ How to Run
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/finova.git
+git clone https://github.com/francescaac190/finova.git
 cd finova
 flutter pub get
 flutter run
@@ -254,37 +368,25 @@ The app runs in **mock mode by default** — no backend needed. All data comes f
 
 <br />
 
-<!-- ---
-
-# 📖 Related docs
-
-- 🔗 **Backend spec** → see [`docs/BACKEND_SPEC.md`](docs/BACKEND_SPEC.md) _(the full backend contract for when the backend gets built)_
-- 🔗 **Backend repo** → _coming after the Flutter app is done_
-
-<br />
-
---- -->
-
-# 👩‍💻 About
-
-Built by **Francesca Antelo Callau** — Frontend & Mobile Engineer based in Bolivia 🇧🇴.
-Portfolio project demonstrating Flutter architecture, state management, and clean code practices.
-
-**[LinkedIn](https://linkedin.com/in/YOUR_USERNAME)** · **[GitHub](https://github.com/YOUR_USERNAME)**
-
-<br />
-
 ---
 
-# 📝 Progress log
+# 📝 Progress Log
 
-Notes on what I finished each week. Helps me see progress and gives me material for LinkedIn posts.
-
-- **Week 1 (Apr 14–20):** Set up design system, created `AppColors`. Backend spec written. Mock API layer built.
+- **Week 1 (Apr 17–23):** Design system started (`AppColors` ✅), navigation shell built (`AppShell`, `AppRouter`, `BottomNavBar` ✅), auth screens scaffolded, home screen placeholder created.
 - **Week 2:** _In progress…_
 
 <br />
 
 ---
 
-_This README updates as the app gets built._
+# 👩‍💻 About
+
+Built by **Francesca Antelo Callau** — Frontend & Mobile Engineer.
+
+**[LinkedIn](https://linkedin.com/in/YOUR_USERNAME)** · **[GitHub](https://github.com/francescaac190)**
+
+<br />
+
+---
+
+_This README updates as the app gets built. Last updated: April 2026._
