@@ -38,18 +38,12 @@ class BalanceCard extends StatelessWidget {
         children: [
           Text(
             'TOTAL BALANCE',
-            style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w500,
-                color: AppColors.textMuted),
+            style: AppTextStyles.bodySmall.copyWith(color: AppColors.textMuted),
           ),
           SizedBox(height: 12),
           Text(
             balance,
-            style: TextStyle(
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textPrimary),
+            style: AppTextStyles.displayMedium,
           ),
           SizedBox(height: 12),
           Row(
@@ -61,10 +55,9 @@ class BalanceCard extends StatelessWidget {
               ),
               Text(
                 '$change this month',
-                style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.accentGreen),
+                style: AppTextStyles.bodySmall.copyWith(
+                  color: AppColors.accentGreen,
+                ),
               ),
             ],
           )

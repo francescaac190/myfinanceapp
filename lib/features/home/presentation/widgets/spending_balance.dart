@@ -15,13 +15,10 @@ class SpendingBalance extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Spending this month',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            Text('Spending this month', style: AppTextStyles.titleSmall),
             SizedBox(height: 12),
             Text('\$567.89 / \$1,000',
-                style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
+                style: AppTextStyles.bodySmall.copyWith(
                   color: AppColors.textMuted,
                 )),
           ],

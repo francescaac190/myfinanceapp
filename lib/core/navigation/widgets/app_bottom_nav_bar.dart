@@ -124,10 +124,7 @@ class _NavItem extends StatelessWidget {
                 ),
                 Text(
                   item.label.toUpperCase(),
-                  style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
-                    letterSpacing: 0.5,
+                  style: AppTextStyles.navLabel.copyWith(
                     color:
                         isSelected ? AppColors.bgPrimary : AppColors.textMuted,
                   ),

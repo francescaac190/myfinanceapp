@@ -43,13 +43,13 @@ class SpendingCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Food',
-                style: TextStyle(fontSize: 14, color: AppColors.textSecondary)),
+                style: AppTextStyles.bodySmall
+                    .copyWith(color: AppColors.textSecondary)),
+            // TextStyle(fontSize: 14, color: AppColors.textSecondary)),
             SizedBox(height: 4),
             Text('\$89.50',
-                style: TextStyle(
-                    color: AppColors.accentBlue,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold)),
+                style: AppTextStyles.titleSmall
+                    .copyWith(color: AppColors.accentBlue, fontSize: 16)),
           ],
         ),
       ),

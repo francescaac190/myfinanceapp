@@ -15,16 +15,16 @@ class TransactionList extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Recent Transactions',
-                style: TextStyle(
-                    color: AppColors.textPrimary,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700)),
+            Text(
+              'Recent Transactions',
+              style: AppTextStyles.titleSmall,
+            ),
             Text('See all',
-                style: TextStyle(
-                    color: AppColors.accentBlue,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w500)),
+                style: AppTextStyles.bodySmall.copyWith(
+                  color: AppColors.accentBlue,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                )),
           ],
         ),
         SizedBox(height: 12),
@@ -98,11 +98,15 @@ class TransactionItem extends StatelessWidget {
         ),
       ),
       title: Text(title,
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700)),
+          style: AppTextStyles.bodyMedium.copyWith(
+            fontWeight: FontWeight.w700,
+          )),
       subtitle: Text(subtitle,
-          style: TextStyle(fontSize: 12, color: AppColors.textMuted)),
+          style: AppTextStyles.bodySmall.copyWith(
+            color: AppColors.textMuted,
+          )),
       trailing: Text(amount,
-          style: TextStyle(
+          style: AppTextStyles.bodySmall.copyWith(
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: AppColors.accentRed)),

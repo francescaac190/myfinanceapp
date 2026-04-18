@@ -19,15 +19,13 @@ class HomeHeader extends StatelessWidget {
           children: [
             Text(
               'Good Morning,',
-              style: TextStyle(
-                fontSize: 14,
-                color: AppColors.textSecondary,
-              ),
+              style:
+                  AppTextStyles.bodyLarge.copyWith(color: AppColors.textMuted),
             ),
             SizedBox(height: 4),
             Text(
               userName,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: AppTextStyles.headlineSmall,
             ),
           ],
         ),
