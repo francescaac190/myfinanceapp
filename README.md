@@ -76,7 +76,7 @@ Get the project skeleton right. No features yet — just a branded shell with a 
 **Design system**
 
 - [x] `app_colors.dart` ✅
-- [ ] `app_text_styles.dart` — display, heading, body, caption, label variants
+- [x] `app_text_styles.dart` ✅
 - [ ] `app_spacing.dart` — xs (4) · sm (8) · md (16) · lg (24) · xl (32) · xxl (48)
 - [ ] `app_radius.dart` — sm (8) · md (12) · lg (16) · xl (20) · full (999)
 - [ ] Wire everything into `AppTheme.dark` in `main.dart`
@@ -85,7 +85,8 @@ Get the project skeleton right. No features yet — just a branded shell with a 
 
 - [x] `core/navigation/app_shell.dart`
 - [x] `core/navigation/widgets/app_bottom_nav_bar.dart`
-- [x] `core/router/route_names.dart`
+- [x] `core/navigation/widgets/app_floating_button.dart`
+- [x] `core/navigation/widgets/bottom_bar_item.dart`
 - [x] `core/router/app_router.dart` with `StatefulShellRoute.indexedStack`
 - [ ] 5 placeholder pages: Home, Wallet, Bills, Savings, Profile
 
@@ -144,7 +145,13 @@ Build the Home screen end-to-end following the full Clean Architecture pattern (
 **UI**
 
 - [ ] Reusable widgets: `AppCard`, `MoneyText`, `TrendBadge`
-- [ ] `HomePage` with greeting, balance card, spending card, quick actions, recent transactions
+- [x] `HomeHeader` widget (greeting + avatar) ✅
+- [x] `BalanceCard` widget ✅
+- [x] `SpendingBalance` widget ✅
+- [x] `SpendingCard` / `SpendingCardList` widget ✅
+- [x] `TransactionList` widget ✅
+- [x] `GradientProgressBar` widget ✅
+- [x] `HomeScreen` assembled with all sections ✅
 - [ ] Loading state (shimmer or skeleton)
 - [ ] Error state with retry button
 - [ ] Pull-to-refresh
@@ -330,7 +337,7 @@ Each screen follows the same 5-step recipe from Phase 2: domain → data → BLo
 ```
 lib/
 ├── core/
-│   ├── theme/          # AppColors ✅, AppTextStyles, AppSpacing, AppRadius
+│   ├── theme/          # AppColors ✅, AppTextStyles ✅, AppSpacing, AppRadius
 │   ├── api/            # Endpoints, DTOs, MockApiService
 │   ├── errors/         # Failure sealed class
 │   ├── router/         # GoRouter config ✅
@@ -338,7 +345,7 @@ lib/
 │   └── di/             # get_it setup
 │
 ├── features/
-│   ├── home/           # presentation/screens ✅
+│   ├── home/           # presentation/screens ✅, presentation/widgets ✅
 │   ├── wallet/
 │   ├── bills/
 │   ├── savings/
@@ -372,8 +379,8 @@ The app runs in **mock mode by default** — no backend needed. All data comes f
 
 # 📝 Progress Log
 
-- **Week 1 (Apr 17–23):** Design system started (`AppColors` ✅), navigation shell built (`AppShell`, `AppRouter`, `BottomNavBar` ✅), auth screens scaffolded, home screen placeholder created.
-- **Week 2:** _In progress…_
+- **Week 1 (Apr 17–23):** Design system started (`AppColors` ✅, `AppTextStyles` ✅), navigation shell built (`AppShell`, `AppRouter`, `BottomNavBar`, `FloatingButton`, `BottomBarItem` ✅), auth screens scaffolded (Login, Signup).
+- **Week 2 (Apr 17–ongoing):** Home screen UI built end-to-end — `HomeHeader`, `BalanceCard`, `SpendingBalance`, `SpendingCard`/`SpendingCardList`, `TransactionList`, and `GradientProgressBar` widgets all complete ✅. Home screen assembled with static/mock data.
 
 <br />
 

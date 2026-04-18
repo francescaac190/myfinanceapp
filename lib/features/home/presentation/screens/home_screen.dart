@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/adapters.dart';
-import '../../../../core/index.dart';
 import '../widgets/balance_card.dart';
 import '../widgets/home_header.dart';
 import '../widgets/spending_balance.dart';
