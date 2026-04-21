@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      bottom: false,
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
