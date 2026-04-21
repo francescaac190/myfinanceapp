@@ -36,7 +36,7 @@ class HomeHeader extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.bgCard,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(100),
+              borderRadius: AppRadius.allFull,
               side: BorderSide(
                 color: AppColors.borderCard,
               ),

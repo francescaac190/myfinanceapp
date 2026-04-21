@@ -33,7 +33,7 @@ class TransactionList extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             color: AppColors.bgCard,
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: AppRadius.allMd,
             border: Border.all(
               color: AppColors.borderCard,
             ),
@@ -90,7 +90,7 @@ class TransactionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: ClipRRect(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: AppRadius.allSm,
         child: Container(
           padding: EdgeInsets.all(12),
           color: AppColors.bgSecondary,

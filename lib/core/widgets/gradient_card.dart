@@ -16,7 +16,7 @@ class GradientCard extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
           color: AppColors.bgPrimary,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: AppRadius.allLg,
           border: Border.all(
             color: AppColors.borderCard,
           ),

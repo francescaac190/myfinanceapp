@@ -32,7 +32,7 @@ class SpendingCard extends StatelessWidget {
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: AppColors.bgCard,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: AppRadius.allMd,
           border: Border.all(
             color: AppColors.borderCard,
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfinanceapp/core/theme/app_colors.dart';
+import 'package:myfinanceapp/core/theme/app_radius.dart';
 
 class GradientProgressBar extends StatelessWidget { // Value between 0.0 and 1.0
 
@@ -13,7 +14,7 @@ class GradientProgressBar extends StatelessWidget { // Value between 0.0 and 1.0
       height: 8,
       decoration: BoxDecoration(
         color: AppColors.bgCard, // Background track color
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: AppRadius.allXs,
       ),
       child: FractionallySizedBox(
         alignment: Alignment.centerLeft,
@@ -26,7 +27,7 @@ class GradientProgressBar extends StatelessWidget { // Value between 0.0 and 1.0
                 AppColors.accentBlue,
               ], // Your gradient colors
             ),
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: AppRadius.allXs,
           ),
         ),
       ),

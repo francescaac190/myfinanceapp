@@ -37,11 +37,11 @@ class AppBottomBar extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(48),
+            borderRadius: AppRadius.allFull,
             child: Container(
               decoration: BoxDecoration(
                 color: AppColors.bgCardAlt,
-                borderRadius: BorderRadius.circular(48),
+                borderRadius: AppRadius.allFull,
                 border: Border.all(
                   color: Colors.white.withOpacity(0.08),
                 ),
