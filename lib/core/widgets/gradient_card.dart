@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../index.dart';
+import 'package:myfinanceapp/core/index.dart';
 
 class GradientCard extends StatelessWidget {
   const GradientCard({
-    super.key,
-    required this.child,
+    required this.child, super.key,
   });
 
   final Widget child;
@@ -20,7 +19,6 @@ class GradientCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: AppColors.borderCard,
-            width: 1,
           ),
           gradient: const RadialGradient(
             center: Alignment.topRight,
@@ -33,6 +31,6 @@ class GradientCard extends StatelessWidget {
             stops: [0.0, 0.5, 1.0],
           ),
         ),
-        child: child);
+        child: child,);
   }
 }

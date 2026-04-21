@@ -9,7 +9,7 @@ class SpendingCardList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
+      children: const [
         SpendingCard(),
         SizedBox(width: 12),
         SpendingCard(),
@@ -36,7 +36,6 @@ class SpendingCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: AppColors.borderCard,
-            width: 1,
           ),
         ),
         child: Column(
@@ -44,12 +43,12 @@ class SpendingCard extends StatelessWidget {
           children: [
             Text('Food',
                 style: AppTextStyles.bodySmall
-                    .copyWith(color: AppColors.textSecondary)),
+                    .copyWith(color: AppColors.textSecondary),),
             // TextStyle(fontSize: 14, color: AppColors.textSecondary)),
             SizedBox(height: 4),
-            Text('\$89.50',
+            Text(r'$89.50',
                 style: AppTextStyles.titleSmall
-                    .copyWith(color: AppColors.accentBlue, fontSize: 16)),
+                    .copyWith(color: AppColors.accentBlue, fontSize: 16),),
           ],
         ),
       ),

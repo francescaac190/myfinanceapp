@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/index.dart';
+import 'package:myfinanceapp/core/index.dart';
 
 class TransactionList extends StatelessWidget {
   const TransactionList({
@@ -24,7 +24,7 @@ class TransactionList extends StatelessWidget {
                   color: AppColors.accentBlue,
                   fontSize: 13,
                   fontWeight: FontWeight.w500,
-                )),
+                ),),
           ],
         ),
         SizedBox(height: 12),
@@ -35,23 +35,22 @@ class TransactionList extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: AppColors.borderCard,
-              width: 1,
             ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               TransactionItem(
                 title: 'Starbucks',
                 subtitle: 'Today, 8:30 AM',
-                amount: '-\$5.75',
+                amount: r'-$5.75',
                 icon: Icons.local_cafe_outlined,
                 iconColor: AppColors.accentGreen,
               ),
               TransactionItem(
                 title: 'Amazon',
                 subtitle: 'Yesterday, 3:15 PM',
-                amount: '-\$120.00',
+                amount: r'-$120.00',
                 icon: Icons.shopping_cart_outlined,
                 iconColor: AppColors.accentRed,
               ),
@@ -72,11 +71,6 @@ class TransactionList extends StatelessWidget {
 }
 
 class TransactionItem extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final String amount;
-  final IconData icon;
-  final Color iconColor;
   const TransactionItem({
     required this.title,
     required this.subtitle,
@@ -85,6 +79,11 @@ class TransactionItem extends StatelessWidget {
     required this.iconColor,
     super.key,
   });
+  final String title;
+  final String subtitle;
+  final String amount;
+  final IconData icon;
+  final Color iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -100,16 +99,16 @@ class TransactionItem extends StatelessWidget {
       title: Text(title,
           style: AppTextStyles.bodyMedium.copyWith(
             fontWeight: FontWeight.w700,
-          )),
+          ),),
       subtitle: Text(subtitle,
           style: AppTextStyles.bodySmall.copyWith(
             color: AppColors.textMuted,
-          )),
+          ),),
       trailing: Text(amount,
           style: AppTextStyles.bodySmall.copyWith(
               fontSize: 14,
               fontWeight: FontWeight.bold,
-              color: AppColors.accentRed)),
+              color: AppColors.accentRed,),),
     );
   }
 }

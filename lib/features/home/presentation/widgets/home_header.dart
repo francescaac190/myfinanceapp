@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/index.dart';
+import 'package:myfinanceapp/core/index.dart';
 
 class HomeHeader extends StatelessWidget {
-  final String userName;
   const HomeHeader({
-    super.key,
-    required this.userName,
+    required this.userName, super.key,
   });
+  final String userName;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,6 @@ class HomeHeader extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100),
                 side: BorderSide(
                   color: AppColors.borderCard,
-                  width: 1,
                 ),
               ),
               padding: const EdgeInsets.all(12),
@@ -48,7 +46,7 @@ class HomeHeader extends StatelessWidget {
               Icons.notifications_outlined,
               color: AppColors.textSecondary,
               size: 20,
-            ))
+            ),),
       ],
     );
   }

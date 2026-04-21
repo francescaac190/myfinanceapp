@@ -73,7 +73,6 @@ class AppTheme {
 
   static ThemeData get dark {
     const colorScheme = ColorScheme.dark(
-      brightness: Brightness.dark,
       primary: AppColors.accentBlue,
       onPrimary: AppColors.textPrimary,
       secondary: AppColors.accentPurple,
@@ -83,7 +82,6 @@ class AppTheme {
       error: AppColors.accentRed,
       onError: AppColors.textPrimary,
       surface: AppColors.bgCard,
-      onSurface: AppColors.textPrimary,
       surfaceContainerLowest: AppColors.bgPrimary,
       surfaceContainerLow: AppColors.bgSecondary,
       surfaceContainer: AppColors.bgCard,

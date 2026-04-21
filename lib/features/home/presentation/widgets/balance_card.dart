@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../../core/index.dart';
+import 'package:myfinanceapp/core/index.dart';
 
 class BalanceCard extends StatelessWidget {
+  const BalanceCard({
+    required this.balance, required this.change, super.key,
+  });
   final String balance;
   final String change;
-  const BalanceCard({
-    super.key,
-    required this.balance,
-    required this.change,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +38,7 @@ class BalanceCard extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

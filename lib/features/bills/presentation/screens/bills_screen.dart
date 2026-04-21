@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/index.dart';
-import '../widgets/billls_list.dart';
+import 'package:myfinanceapp/core/index.dart';
+import 'package:myfinanceapp/features/bills/presentation/widgets/billls_list.dart';
 
 class BillsScreen extends StatelessWidget {
   const BillsScreen({super.key});
@@ -16,13 +16,12 @@ class BillsScreen extends StatelessWidget {
           ),
         ),
         body: SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               GradientCard(
                   child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     'TOTAL DUE THIS MONTH',
@@ -31,48 +30,48 @@ class BillsScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    '\$120.00',
+                    r'$120.00',
                     style: AppTextStyles.displayMedium,
                   ),
                   SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text('Paid: \$80.00',
+                      Text(r'Paid: $80.00',
                           style: AppTextStyles.bodyMedium.copyWith(
                               fontWeight: FontWeight.w600,
-                              color: AppColors.accentGreen)),
-                      Text('Pending: \$1080.00',
+                              color: AppColors.accentGreen,),),
+                      Text(r'Pending: $1080.00',
                           style: AppTextStyles.bodyMedium.copyWith(
                               fontWeight: FontWeight.w600,
-                              color: AppColors.accentAmber)),
+                              color: AppColors.accentAmber,),),
                     ],
                   ),
                 ],
-              )),
+              ),),
               DonationPieChart(
                 // size: 120,
                 items: [
                   PieChartItem(
-                      label: 'Rent', value: 4500, color: AppColors.accentBlue),
+                      label: 'Rent', value: 4500, color: AppColors.accentBlue,),
                   PieChartItem(
                       label: 'Utilities',
                       value: 2800,
-                      color: AppColors.accentPurple),
+                      color: AppColors.accentPurple,),
                   PieChartItem(
                       label: 'Subscriptions',
                       value: 3200,
-                      color: AppColors.accentGreen),
+                      color: AppColors.accentGreen,),
                   PieChartItem(
                       label: 'Insurance',
                       value: 1500,
-                      color: AppColors.accentAmber),
+                      color: AppColors.accentAmber,),
                 ],
               ),
               SizedBox(height: 16),
               BillsList(),
             ],
           ),
-        ));
+        ),);
   }
 }

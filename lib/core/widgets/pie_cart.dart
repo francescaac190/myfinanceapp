@@ -1,17 +1,16 @@
 // lib/presentation/widgets/charts/donation_pie_chart.dart
-import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
 import 'package:myfinanceapp/core/index.dart';
 
 class DonationPieChart extends StatefulWidget {
-  final List<PieChartItem> items;
-  final double size;
 
   const DonationPieChart({
-    super.key,
-    required this.items,
+    required this.items, super.key,
     this.size = 200,
   });
+  final List<PieChartItem> items;
+  final double size;
 
   @override
   State<DonationPieChart> createState() => _DonationPieChartState();
@@ -67,7 +66,7 @@ class _DonationPieChartState extends State<DonationPieChart> {
           color: item.color,
           value: item.value,
           radius: isTouched ? 40 : 30,
-          showTitle: false);
+          showTitle: false,);
     });
   }
 
@@ -99,20 +98,20 @@ class _DonationPieChartState extends State<DonationPieChart> {
                     ),
                   ],
                 ),
-              ))
+              ),)
           .toList(),
     );
   }
 }
 
 class PieChartItem {
-  final String label;
-  final double value;
-  final Color color;
 
   PieChartItem({
     required this.label,
     required this.value,
     required this.color,
   });
+  final String label;
+  final double value;
+  final Color color;
 }

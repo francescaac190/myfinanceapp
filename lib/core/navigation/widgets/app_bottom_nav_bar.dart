@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../index.dart';
+import 'package:myfinanceapp/core/index.dart';
 
 class AppBottomBar extends StatelessWidget {
+  const AppBottomBar({required this.currentIndex, super.key});
   final int currentIndex;
-  const AppBottomBar({super.key, required this.currentIndex});
 
   final List<_NavItemData> _items = const [
     _NavItemData(icon: Icons.home_outlined, label: 'Home'),
@@ -19,19 +19,14 @@ class AppBottomBar extends StatelessWidget {
     switch (index) {
       case 0:
         context.go('/home');
-        break;
       case 1:
         context.go('/bills');
-        break;
       case 2:
         context.go('/home');
-        break;
       case 3:
         context.go('/home');
-        break;
       case 4:
         context.go('/home');
-        break;
     }
   }
 
@@ -49,12 +44,10 @@ class AppBottomBar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(48),
                 border: Border.all(
                   color: Colors.white.withOpacity(0.08),
-                  width: 1,
                 ),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: List.generate(_items.length, (i) {
                   return Expanded(
                     child: _NavItem(
@@ -67,20 +60,20 @@ class AppBottomBar extends StatelessWidget {
               ),
             ),
           ),
-        ));
+        ),);
   }
 }
 
 class _NavItem extends StatelessWidget {
-  final _NavItemData item;
-  final bool isSelected;
-  final VoidCallback onTap;
 
   const _NavItem({
     required this.item,
     required this.isSelected,
     required this.onTap,
   });
+  final _NavItemData item;
+  final bool isSelected;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +121,7 @@ class _NavItem extends StatelessWidget {
                     color:
                         isSelected ? AppColors.bgPrimary : AppColors.textMuted,
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -139,8 +132,8 @@ class _NavItem extends StatelessWidget {
 }
 
 class _NavItemData {
-  final IconData icon;
-  final String label;
 
   const _NavItemData({required this.icon, required this.label});
+  final IconData icon;
+  final String label;
 }

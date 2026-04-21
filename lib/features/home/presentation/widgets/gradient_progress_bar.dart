@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myfinanceapp/core/theme/app_colors.dart';
 
-class GradientProgressBar extends StatelessWidget {
-  final double progress; // Value between 0.0 and 1.0
+class GradientProgressBar extends StatelessWidget { // Value between 0.0 and 1.0
 
-  GradientProgressBar({required this.progress});
+  const GradientProgressBar({required this.progress, super.key});
+  final double progress;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +21,9 @@ class GradientProgressBar extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
+              colors: const [
                 AppColors.accentPurple,
-                AppColors.accentBlue
+                AppColors.accentBlue,
               ], // Your gradient colors
             ),
             borderRadius: BorderRadius.circular(5),
