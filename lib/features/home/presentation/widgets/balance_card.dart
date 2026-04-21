@@ -3,7 +3,9 @@ import 'package:myfinanceapp/core/index.dart';
 
 class BalanceCard extends StatelessWidget {
   const BalanceCard({
-    required this.balance, required this.change, super.key,
+    required this.balance,
+    required this.change,
+    super.key,
   });
   final String balance;
   final String change;
@@ -18,12 +20,12 @@ class BalanceCard extends StatelessWidget {
             'TOTAL BALANCE',
             style: AppTextStyles.bodySmall.copyWith(color: AppColors.textMuted),
           ),
-          SizedBox(height: 12),
+          AppSpacing.gapSm,
           Text(
             balance,
             style: AppTextStyles.displayMedium,
           ),
-          SizedBox(height: 12),
+          AppSpacing.gapSm,
           Row(
             children: [
               Icon(

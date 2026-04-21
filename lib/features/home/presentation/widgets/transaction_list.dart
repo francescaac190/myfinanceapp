@@ -19,17 +19,18 @@ class TransactionList extends StatelessWidget {
               'Recent Transactions',
               style: AppTextStyles.titleSmall,
             ),
-            Text('See all',
-                style: AppTextStyles.bodySmall.copyWith(
-                  color: AppColors.accentBlue,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w500,
-                ),),
+            Text(
+              'See all',
+              style: AppTextStyles.bodySmall.copyWith(
+                color: AppColors.accentBlue,
+                fontSize: 13,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ],
         ),
-        SizedBox(height: 12),
+        AppSpacing.gapSm,
         Container(
-          // height: 100,
           decoration: BoxDecoration(
             color: AppColors.bgCard,
             borderRadius: BorderRadius.circular(12),
@@ -96,19 +97,26 @@ class TransactionItem extends StatelessWidget {
           child: Icon(icon, color: iconColor, size: 20),
         ),
       ),
-      title: Text(title,
-          style: AppTextStyles.bodyMedium.copyWith(
-            fontWeight: FontWeight.w700,
-          ),),
-      subtitle: Text(subtitle,
-          style: AppTextStyles.bodySmall.copyWith(
-            color: AppColors.textMuted,
-          ),),
-      trailing: Text(amount,
-          style: AppTextStyles.bodySmall.copyWith(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              color: AppColors.accentRed,),),
+      title: Text(
+        title,
+        style: AppTextStyles.bodyMedium.copyWith(
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+      subtitle: Text(
+        subtitle,
+        style: AppTextStyles.bodySmall.copyWith(
+          color: AppColors.textMuted,
+        ),
+      ),
+      trailing: Text(
+        amount,
+        style: AppTextStyles.bodySmall.copyWith(
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+          color: AppColors.accentRed,
+        ),
+      ),
     );
   }
 }

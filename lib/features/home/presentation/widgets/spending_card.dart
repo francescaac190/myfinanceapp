@@ -11,9 +11,9 @@ class SpendingCardList extends StatelessWidget {
     return Row(
       children: const [
         SpendingCard(),
-        SizedBox(width: 12),
+        AppSpacing.hGapSm,
         SpendingCard(),
-        SizedBox(width: 12),
+        AppSpacing.hGapSm,
         SpendingCard(),
       ],
     );
@@ -29,7 +29,6 @@ class SpendingCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        // width: 200,
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: AppColors.bgCard,
@@ -41,14 +40,17 @@ class SpendingCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Food',
-                style: AppTextStyles.bodySmall
-                    .copyWith(color: AppColors.textSecondary),),
-            // TextStyle(fontSize: 14, color: AppColors.textSecondary)),
-            SizedBox(height: 4),
-            Text(r'$89.50',
-                style: AppTextStyles.titleSmall
-                    .copyWith(color: AppColors.accentBlue, fontSize: 16),),
+            Text(
+              'Food',
+              style: AppTextStyles.bodySmall
+                  .copyWith(color: AppColors.textSecondary),
+            ),
+            AppSpacing.gapXs,
+            Text(
+              r'$89.50',
+              style: AppTextStyles.titleSmall
+                  .copyWith(color: AppColors.accentBlue, fontSize: 16),
+            ),
           ],
         ),
       ),

@@ -4,7 +4,8 @@ import 'package:myfinanceapp/core/index.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
-    required this.userName, super.key,
+    required this.userName,
+    super.key,
   });
   final String userName;
 
@@ -21,7 +22,7 @@ class HomeHeader extends StatelessWidget {
               style:
                   AppTextStyles.bodyLarge.copyWith(color: AppColors.textMuted),
             ),
-            SizedBox(height: 4),
+            AppSpacing.gapXs,
             Text(
               userName,
               style: AppTextStyles.headlineSmall,
@@ -29,24 +30,25 @@ class HomeHeader extends StatelessWidget {
           ],
         ),
         IconButton(
-            onPressed: () {
-              print('Notification Icon Pressed');
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.bgCard,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(100),
-                side: BorderSide(
-                  color: AppColors.borderCard,
-                ),
+          onPressed: () {
+            print('Notification Icon Pressed');
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.bgCard,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(100),
+              side: BorderSide(
+                color: AppColors.borderCard,
               ),
-              padding: const EdgeInsets.all(12),
             ),
-            icon: const Icon(
-              Icons.notifications_outlined,
-              color: AppColors.textSecondary,
-              size: 20,
-            ),),
+            padding: const EdgeInsets.all(12),
+          ),
+          icon: const Icon(
+            Icons.notifications_outlined,
+            color: AppColors.textSecondary,
+            size: 20,
+          ),
+        ),
       ],
     );
   }

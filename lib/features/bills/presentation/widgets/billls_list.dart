@@ -11,12 +11,13 @@ class BillsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Upcoming Bills',
           style: AppTextStyles.titleSmall,
         ),
-        SizedBox(height: 8),
+        AppSpacing.gapMd,
         Container(
           // height: 100,
           decoration: BoxDecoration(

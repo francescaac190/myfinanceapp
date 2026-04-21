@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfinanceapp/core/index.dart';
 import 'package:myfinanceapp/features/home/presentation/widgets/balance_card.dart';
 import 'package:myfinanceapp/features/home/presentation/widgets/home_header.dart';
 import 'package:myfinanceapp/features/home/presentation/widgets/spending_balance.dart';
@@ -17,16 +18,16 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: const [
             HomeHeader(userName: 'Francesca'),
-            SizedBox(height: 24),
+            AppSpacing.gapLg,
             BalanceCard(
               balance: r'$1,234.56',
               change: ' +5.4%',
             ),
-            SizedBox(height: 24),
+            AppSpacing.gapLg,
             SpendingBalance(),
-            SizedBox(height: 16),
+            AppSpacing.gapMd,
             SpendingCardList(),
-            SizedBox(height: 24),
+            AppSpacing.gapLg,
             TransactionList(),
           ],
         ),
