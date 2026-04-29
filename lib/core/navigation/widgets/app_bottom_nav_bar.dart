@@ -22,50 +22,50 @@ class AppBottomBar extends StatelessWidget {
       case 1:
         context.go('/bills');
       case 2:
-        context.go('/home');
+        context.go('/savings');
       case 3:
-        context.go('/home');
+        context.go('/wallet');
       case 4:
-        context.go('/home');
+        context.go('/profile');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        minimum: const EdgeInsets.only(bottom: 16),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: ClipRRect(
-            borderRadius: AppRadius.allFull,
-            child: Container(
-              decoration: BoxDecoration(
-                color: AppColors.bgCardAlt,
-                borderRadius: AppRadius.allFull,
-                border: Border.all(
-                  color: Colors.white.withOpacity(0.08),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(_items.length, (i) {
-                  return Expanded(
-                    child: _NavItem(
-                      item: _items[i],
-                      isSelected: currentIndex == i,
-                      onTap: () => _onTap(context, i),
-                    ),
-                  );
-                }),
+      minimum: const EdgeInsets.only(bottom: 16),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: ClipRRect(
+          borderRadius: AppRadius.allFull,
+          child: Container(
+            decoration: BoxDecoration(
+              color: AppColors.bgCardAlt,
+              borderRadius: AppRadius.allFull,
+              border: Border.all(
+                color: Colors.white.withOpacity(0.08),
               ),
             ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(_items.length, (i) {
+                return Expanded(
+                  child: _NavItem(
+                    item: _items[i],
+                    isSelected: currentIndex == i,
+                    onTap: () => _onTap(context, i),
+                  ),
+                );
+              }),
+            ),
           ),
-        ),);
+        ),
+      ),
+    );
   }
 }
 
 class _NavItem extends StatelessWidget {
-
   const _NavItem({
     required this.item,
     required this.isSelected,
@@ -132,7 +132,6 @@ class _NavItem extends StatelessWidget {
 }
 
 class _NavItemData {
-
   const _NavItemData({required this.icon, required this.label});
   final IconData icon;
   final String label;
