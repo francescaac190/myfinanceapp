@@ -1,0 +1,95 @@
+{
+  "greeting": {
+    "name": "Alex",
+    "timeOfDay": "morning"
+  },
+  "totalBalance": "24562.80",
+  "currency": "USD",
+  "trend": {
+    "amount": "+2720.45",
+    "percent": 12.5,
+    "direction": "UP",
+    "periodLabel": "this month"
+  },
+  "spendingThisMonth": {
+    "total": "1840.00",
+    "limit": "3500.00",
+    "percent": 52.6,
+    "categories": [
+      {
+        "id": "cat_food",
+        "name": "Food",
+        "amount": "620.00",
+        "color": "#3B82F6",
+        "icon": "restaurant"
+      },
+      {
+        "id": "cat_transport",
+        "name": "Transport",
+        "amount": "340.00",
+        "color": "#8B5CF6",
+        "icon": "directions_car"
+      },
+      {
+        "id": "cat_shopping",
+        "name": "Shopping",
+        "amount": "480.00",
+        "color": "#EF4444",
+        "icon": "shopping_bag"
+      }
+    ]
+  },
+  "quickActions": [
+    { "id": "SEND", "label": "Send", "icon": "send", "enabled": true },
+    { "id": "REQUEST", "label": "Request", "icon": "request_page", "enabled": true },
+    { "id": "PAY_BILLS", "label": "Pay Bills", "icon": "receipt_long", "enabled": true },
+    { "id": "TOP_UP", "label": "Top Up", "icon": "add_circle", "enabled": true }
+  ],
+  "recentTransactions": [
+    {
+      "id": "txn_001",
+      "description": "Amazon",
+      "merchant": "Amazon.com",
+      "amount": "-129.90",
+      "currency": "USD",
+      "type": "EXPENSE",
+      "occurredAt": "2026-04-15T14:22:10.000Z",
+      "category": {
+        "id": "cat_shopping",
+        "name": "Shopping",
+        "icon": "shopping_bag",
+        "color": "#EF4444"
+      }
+    },
+    {
+      "id": "txn_002",
+      "description": "Starbucks",
+      "merchant": "Starbucks",
+      "amount": "-8.50",
+      "currency": "USD",
+      "type": "EXPENSE",
+      "occurredAt": "2026-04-15T08:05:00.000Z",
+      "category": {
+        "id": "cat_coffee",
+        "name": "Coffee & Drinks",
+        "icon": "local_cafe",
+        "color": "#F59E0B"
+      }
+    },
+    {
+      "id": "txn_003",
+      "description": "Salary Deposit",
+      "merchant": "Merteck Payroll",
+      "amount": "+4200.00",
+      "currency": "USD",
+      "type": "INCOME",
+      "occurredAt": "2026-04-12T09:00:00.000Z",
+      "category": {
+        "id": "cat_salary",
+        "name": "Salary",
+        "icon": "work",
+        "color": "#10B981"
+      }
+    }
+  ]
+}

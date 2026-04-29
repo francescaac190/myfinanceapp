@@ -1,0 +1,21 @@
+{
+  "data": [
+    { "id": "cat_food", "name": "Food & Groceries", "icon": "shopping_cart", "color": "#EF4444", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_transport", "name": "Transport", "icon": "directions_car", "color": "#8B5CF6", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_shopping", "name": "Shopping", "icon": "shopping_bag", "color": "#F59E0B", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_entertainment", "name": "Entertainment", "icon": "movie", "color": "#EF4444", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_coffee", "name": "Coffee & Drinks", "icon": "local_cafe", "color": "#F59E0B", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_subs", "name": "Subscriptions", "icon": "subscriptions", "color": "#3B82F6", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_bills", "name": "Bills", "icon": "receipt_long", "color": "#64748B", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_health", "name": "Health", "icon": "favorite", "color": "#10B981", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_travel", "name": "Travel", "icon": "flight_takeoff", "color": "#3B82F6", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_utilities", "name": "Utilities", "icon": "bolt", "color": "#F59E0B", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_housing", "name": "Housing", "icon": "home", "color": "#8B5CF6", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_insurance", "name": "Insurance", "icon": "shield", "color": "#10B981", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_other", "name": "Other", "icon": "category", "color": "#64748B", "kind": "EXPENSE", "isSystem": true },
+    { "id": "cat_salary", "name": "Salary", "icon": "work", "color": "#10B981", "kind": "INCOME", "isSystem": true },
+    { "id": "cat_freelance", "name": "Freelance", "icon": "laptop_mac", "color": "#10B981", "kind": "INCOME", "isSystem": true },
+    { "id": "cat_investments", "name": "Investments", "icon": "trending_up", "color": "#10B981", "kind": "INCOME", "isSystem": true },
+    { "id": "cat_gifts", "name": "Gifts", "icon": "redeem", "color": "#8B5CF6", "kind": "INCOME", "isSystem": true }
+  ]
+}

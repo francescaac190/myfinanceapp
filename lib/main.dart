@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'core/index.dart';
+import 'package:myfinanceapp/core/index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await setupDependencies();
   runApp(const MyApp());
 }
 
@@ -14,14 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      builder: (context, child) {
-        return MediaQuery(
-          data: MediaQuery.of(context).copyWith(
-            textScaler: TextScaler.linear(1),
-          ),
-          child: child!,
-        );
-      },
+      builder: (context, child) => MediaQuery(
+        data: MediaQuery.of(context).copyWith(textScaler: TextScaler.noScaling),
+        child: child!,
+      ),
       debugShowCheckedModeBanner: false,
       title: 'MyFinance',
       theme: AppTheme.dark,
@@ -30,10 +26,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [
-        Locale('en', 'US'),
-        Locale('es', 'ES'),
-      ],
+      supportedLocales: const [Locale('en', 'US'), Locale('es', 'ES')],
       routerConfig: appRouter,
     );
   }

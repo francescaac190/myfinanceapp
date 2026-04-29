@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "id": "acc_chase_checking",
+      "name": "Chase Checking",
+      "type": "CHECKING",
+      "provider": "Chase",
+      "last4": "4429",
+      "cardBrand": "VISA",
+      "balance": "12450.00",
+      "currency": "USD",
+      "isPrimary": true,
+      "createdAt": "2026-03-12T09:15:00.000Z",
+      "updatedAt": "2026-04-15T14:22:10.000Z"
+    },
+    {
+      "id": "acc_ally_savings",
+      "name": "Ally Savings",
+      "type": "SAVINGS",
+      "provider": "Ally",
+      "last4": "7933",
+      "cardBrand": "MASTERCARD",
+      "balance": "8230.00",
+      "currency": "USD",
+      "isPrimary": false,
+      "createdAt": "2026-03-12T09:20:00.000Z",
+      "updatedAt": "2026-04-12T09:00:00.000Z"
+    },
+    {
+      "id": "acc_cash_wallet",
+      "name": "Cash",
+      "type": "CASH",
+      "provider": null,
+      "last4": null,
+      "cardBrand": null,
+      "balance": "4000.50",
+      "currency": "USD",
+      "isPrimary": false,
+      "createdAt": "2026-03-12T09:22:00.000Z",
+      "updatedAt": "2026-04-14T18:30:00.000Z"
+    }
+  ],
+  "summary": {
+    "totalBalance": "24680.50",
+    "currency": "USD",
+    "trendAmount": "+1210.30",
+    "trendPercent": 5.2,
+    "trendDirection": "UP",
+    "accountsCount": 3
+  },
+  "nextCursor": null
+}

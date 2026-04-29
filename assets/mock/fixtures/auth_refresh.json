@@ -1,0 +1,5 @@
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.REFRESHED_ACCESS_TOKEN.MOCK_SIGNATURE",
+  "refreshToken": "rt_rotated_refresh_token_abcdef1234567890",
+  "expiresIn": 900
+}

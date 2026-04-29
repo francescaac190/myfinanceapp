@@ -1,0 +1,14 @@
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.MOCK_NEW_USER_TOKEN.MOCK_SIGNATURE",
+  "refreshToken": "rt_new_user_refresh_token_example_1234567890",
+  "expiresIn": 900,
+  "user": {
+    "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+    "email": "newuser@email.com",
+    "firstName": "New",
+    "lastName": "User",
+    "avatarUrl": null,
+    "isPro": false,
+    "emailVerifiedAt": null
+  }
+}

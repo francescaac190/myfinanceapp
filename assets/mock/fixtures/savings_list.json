@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "id": "goal_emergency",
+      "name": "Emergency Fund",
+      "targetAmount": "10000.00",
+      "currentAmount": "7850.00",
+      "progress": 0.785,
+      "targetDate": "2026-12-31T00:00:00.000Z",
+      "icon": "health_and_safety",
+      "color": "#10B981",
+      "status": "ACTIVE",
+      "completedAt": null,
+      "lastContribution": {
+        "amount": "300.00",
+        "contributedAt": "2026-04-08T12:00:00.000Z"
+      }
+    },
+    {
+      "id": "goal_vacation",
+      "name": "Vacation",
+      "targetAmount": "3000.00",
+      "currentAmount": "1200.00",
+      "progress": 0.40,
+      "targetDate": "2026-08-15T00:00:00.000Z",
+      "icon": "flight_takeoff",
+      "color": "#3B82F6",
+      "status": "ACTIVE",
+      "completedAt": null,
+      "lastContribution": {
+        "amount": "150.00",
+        "contributedAt": "2026-04-05T10:30:00.000Z"
+      }
+    },
+    {
+      "id": "goal_new_car",
+      "name": "New Car",
+      "targetAmount": "25000.00",
+      "currentAmount": "5000.00",
+      "progress": 0.20,
+      "targetDate": "2027-06-01T00:00:00.000Z",
+      "icon": "directions_car",
+      "color": "#8B5CF6",
+      "status": "ACTIVE",
+      "completedAt": null,
+      "lastContribution": {
+        "amount": "500.00",
+        "contributedAt": "2026-04-01T09:00:00.000Z"
+      }
+    }
+  ],
+  "nextCursor": null,
+  "hasMore": false
+}

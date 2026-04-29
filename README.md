@@ -70,16 +70,16 @@ Get the project skeleton right. No features yet — just a branded shell with a 
 - [x] Create Flutter project with proper structure
 - [x] Initialize Git repo
 - [x] Add core dependencies (`flutter_bloc`, `go_router`, `dio`, `get_it`, `flutter_secure_storage`, `equatable`, `decimal`)
-- [ ] Add `very_good_analysis` to `dev_dependencies`
-- [ ] Update `analysis_options.yaml`
+- [x] Add `very_good_analysis` to `dev_dependencies` ✅
+- [x] Update `analysis_options.yaml` ✅
 
 **Design system**
 
 - [x] `app_colors.dart` ✅
 - [x] `app_text_styles.dart` ✅
-- [ ] `app_spacing.dart` — xs (4) · sm (8) · md (16) · lg (24) · xl (32) · xxl (48)
-- [ ] `app_radius.dart` — sm (8) · md (12) · lg (16) · xl (20) · full (999)
-- [ ] Wire everything into `AppTheme.dark` in `main.dart`
+- [x] `app_spacing.dart` — xs (4) · sm (8) · md (16) · lg (24) · xl (32) · xxl (48) ✅
+- [x] `app_radius.dart` — sm (8) · md (12) · lg (16) · xl (20) · full (999) ✅
+- [x] Wire everything into `AppTheme.dark` in `main.dart` ✅
 
 **Navigation shell**
 
@@ -88,29 +88,29 @@ Get the project skeleton right. No features yet — just a branded shell with a 
 - [x] `core/navigation/widgets/app_floating_button.dart`
 - [x] `core/navigation/widgets/bottom_bar_item.dart`
 - [x] `core/router/app_router.dart` with `StatefulShellRoute.indexedStack`
-- [ ] 5 placeholder pages: Home, Wallet, Bills, Savings, Profile
+- [x] 5 placeholder pages: Home, Wallet, Bills, Savings, Profile ✅
 
 **DI + Mock API**
 
-- [ ] `core/di/injection.dart` with `setupDependencies()`
-- [ ] Copy mock API files into `core/api/`
-- [ ] Copy JSON fixtures into `assets/mocks/`
-- [ ] Register `assets/mocks/` in `pubspec.yaml`
-- [ ] Register `MockApiService` as lazy singleton
+- [x] `core/di/injection.dart` with `setupDependencies()` ✅
+- [x] Copy mock API files into `core/api/` (`api_endpoints.dart`, `api_exception.dart`, `mock_api_service.dart`) ✅
+- [x] Copy JSON fixtures into `assets/mock/fixtures/` (15 fixtures: auth, users, home, accounts, transactions, categories, bills, savings, budgets, errors) ✅
+- [x] Register `assets/mock/fixtures/` in `pubspec.yaml` ✅
+- [x] Register `MockApiService` as lazy singleton in `injection.dart` ✅
 
 **Main wiring**
 
-- [ ] Update `main.dart` to 3-step structure: init → DI → runApp
-- [ ] `flutter analyze` passes with zero warnings
-- [ ] `flutter run` launches on iOS and Android, all 5 tabs navigate
+- [x] Update `main.dart` to 3-step structure: init → DI → runApp ✅
+- [x] `flutter analyze` passes with zero warnings ✅ _(`No issues found!`)_
+- [ ] `flutter run` launches on iOS and Android, all 5 tabs navigate _(needs manual device verification)_
 
 **Definition of Done**
 
-- [ ] `flutter analyze` clean
-- [ ] `flutter run` works on iOS and Android
-- [ ] All 5 tabs navigate correctly
-- [ ] No hardcoded colors outside `core/theme/`
-- [ ] `main.dart` under 40 lines
+- [x] `flutter analyze` clean ✅
+- [ ] `flutter run` works on iOS and Android _(manual verification)_
+- [ ] All 5 tabs navigate correctly _(manual verification)_
+- [x] No hardcoded colors outside `core/theme/` ✅
+- [x] `main.dart` under 40 lines ✅ _(34 lines)_
 - [ ] Repo is public on GitHub
 
 <br />
@@ -379,8 +379,8 @@ The app runs in **mock mode by default** — no backend needed. All data comes f
 
 # 📝 Progress Log
 
-- **Week 1 (Apr 17–23):** Design system started (`AppColors` ✅, `AppTextStyles` ✅), navigation shell built (`AppShell`, `AppRouter`, `BottomNavBar`, `FloatingButton`, `BottomBarItem` ✅), auth screens scaffolded (Login, Signup).
-- **Week 2 (Apr 17–ongoing):** Home screen UI built end-to-end — `HomeHeader`, `BalanceCard`, `SpendingBalance`, `SpendingCard`/`SpendingCardList`, `TransactionList`, and `GradientProgressBar` widgets all complete ✅. Home screen assembled with static/mock data.
+- **Week 1 (Apr 17–23):** Design system complete (`AppColors` ✅, `AppTextStyles` ✅, `AppSpacing` ✅, `AppRadius` ✅, `AppTheme.dark` wired). Navigation shell built (`AppShell`, `AppRouter`, `BottomNavBar`, `FloatingButton`, `BottomBarItem` ✅) plus all 5 placeholder screens (Home, Wallet, Bills, Savings, Profile) and auth screens scaffolded (Login, Signup). Lint config set up (`very_good_analysis` + `analysis_options.yaml` ✅).
+- **Week 2 (Apr 17–ongoing):** Home screen UI built end-to-end — `HomeHeader`, `BalanceCard`, `SpendingBalance`, `SpendingCard`/`SpendingCardList`, `TransactionList`, and `GradientProgressBar` widgets all complete ✅. Home screen assembled with static/mock data. Mock API stack fully wired: 15 JSON fixtures in `assets/mock/fixtures/`, `ApiEndpoints` constants, `MockApiService` (`get`/`post` with latency + special-case `POST /budgets`), `ApiException`, and `setupDependencies()` registering `Dio` + `MockApiService` lazy singletons. `main.dart` now runs `init → DI → runApp` in 34 lines. `flutter analyze` clean.
 
 <br />
 
@@ -396,4 +396,4 @@ Built by **Francesca Antelo Callau** — Frontend & Mobile Engineer.
 
 ---
 
-_This README updates as the app gets built. Last updated: April 2026._
+_This README updates as the app gets built. Last updated: April 28, 2026._

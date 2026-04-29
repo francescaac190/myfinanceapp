@@ -1,0 +1,15 @@
+{
+  "totalSaved": "12480.00",
+  "totalTarget": "38000.00",
+  "overallProgress": 0.328,
+  "currency": "USD",
+  "trend": {
+    "amount": "+420.00",
+    "percent": 3.5,
+    "direction": "UP",
+    "periodLabel": "this month"
+  },
+  "activeGoalsCount": 3,
+  "completedGoalsCount": 0,
+  "monthlyContributions": "950.00"
+}

@@ -1,0 +1,59 @@
+{
+  "_validation_error_400": {
+    "error": {
+      "code": "VALIDATION_ERROR",
+      "message": "One or more fields failed validation",
+      "details": [
+        { "field": "email", "issue": "Invalid email format" },
+        { "field": "password", "issue": "Password must be at least 8 characters" }
+      ]
+    }
+  },
+  "_unauthorized_401": {
+    "error": {
+      "code": "UNAUTHORIZED",
+      "message": "Invalid or expired access token"
+    }
+  },
+  "_forbidden_403": {
+    "error": {
+      "code": "EMAIL_NOT_VERIFIED",
+      "message": "Please verify your email before accessing this resource"
+    }
+  },
+  "_not_found_404": {
+    "error": {
+      "code": "RESOURCE_NOT_FOUND",
+      "message": "The requested transaction does not exist"
+    }
+  },
+  "_conflict_409": {
+    "error": {
+      "code": "EMAIL_ALREADY_EXISTS",
+      "message": "An account with this email already exists"
+    }
+  },
+  "_business_rule_422": {
+    "error": {
+      "code": "BUDGET_DUPLICATE_CATEGORY",
+      "message": "An active budget for this category and period already exists",
+      "details": [
+        { "field": "categoryId", "issue": "A MONTHLY budget for 'Food & Groceries' already exists" }
+      ]
+    }
+  },
+  "_rate_limit_429": {
+    "error": {
+      "code": "RATE_LIMIT_EXCEEDED",
+      "message": "Too many requests. Try again in 60 seconds",
+      "retryAfter": 60
+    }
+  },
+  "_server_error_500": {
+    "error": {
+      "code": "INTERNAL_SERVER_ERROR",
+      "message": "An unexpected error occurred. Please try again later",
+      "requestId": "req_a1b2c3d4"
+    }
+  }
+}

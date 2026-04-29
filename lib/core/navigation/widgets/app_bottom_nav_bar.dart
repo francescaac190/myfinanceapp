@@ -7,7 +7,7 @@ class AppBottomBar extends StatelessWidget {
   const AppBottomBar({required this.currentIndex, super.key});
   final int currentIndex;
 
-  final List<_NavItemData> _items = const [
+  static const List<_NavItemData> _items = [
     _NavItemData(icon: Icons.home_outlined, label: 'Home'),
     _NavItemData(icon: Icons.request_quote_outlined, label: 'Bills'),
     _NavItemData(icon: Icons.savings_outlined, label: 'Savings'),
@@ -43,7 +43,7 @@ class AppBottomBar extends StatelessWidget {
               color: AppColors.bgCardAlt,
               borderRadius: AppRadius.allFull,
               border: Border.all(
-                color: Colors.white.withOpacity(0.08),
+                color: Colors.white.withValues(alpha: 0.08),
               ),
             ),
             child: Row(
@@ -97,7 +97,7 @@ class _NavItem extends StatelessWidget {
               boxShadow: isSelected
                   ? [
                       BoxShadow(
-                        color: AppColors.accentBlue.withOpacity(0.4),
+                        color: AppColors.accentBlue.withValues(alpha: 0.4),
                         blurRadius: 16,
                         offset: const Offset(0, 4),
                       ),

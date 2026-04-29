@@ -28,25 +28,25 @@ class AppRadius {
   // ---------------------------------------------------------------------------
 
   /// 4px — subtle rounding for input fields and small chips.
-  static const double xs = 4.0;
+  static const double xs = 4;
 
   /// 8px — secondary buttons, small info cards.
-  static const double sm = 8.0;
+  static const double sm = 8;
 
   /// 12px — standard chips, list item backgrounds, category pills.
-  static const double md = 12.0;
+  static const double md = 12;
 
   /// 16px — primary cards (the most common radius in the app).
-  static const double lg = 16.0;
+  static const double lg = 16;
 
   /// 20px — large feature cards (wallet hero, balance card).
-  static const double xl = 20.0;
+  static const double xl = 20;
 
   /// 28px — bottom sheets, modal top corners.
-  static const double xxl = 28.0;
+  static const double xxl = 28;
 
   /// 999px — pills, circular buttons, avatar rings.
-  static const double full = 999.0;
+  static const double full = 999;
 
   // ---------------------------------------------------------------------------
   // SEMANTIC ALIASES

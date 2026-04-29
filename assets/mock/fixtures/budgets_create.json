@@ -1,0 +1,34 @@
+{
+  "_request_example_POST_budgets": {
+    "categoryId": "cat_food",
+    "limitAmount": "400.00",
+    "period": "WEEKLY",
+    "warningThreshold": 70,
+    "criticalThreshold": 90,
+    "warningEnabled": true,
+    "criticalEnabled": true
+  },
+  "_response_example_201": {
+    "id": "budget_new_123",
+    "category": {
+      "id": "cat_food",
+      "name": "Food & Groceries",
+      "icon": "shopping_cart",
+      "color": "#EF4444"
+    },
+    "limitAmount": "400.00",
+    "spent": "0.00",
+    "remaining": "400.00",
+    "percent": 0,
+    "period": "WEEKLY",
+    "periodStart": "2026-04-13T00:00:00.000Z",
+    "periodEnd": "2026-04-19T23:59:59.999Z",
+    "state": "OK",
+    "warningThreshold": 70,
+    "criticalThreshold": 90,
+    "warningEnabled": true,
+    "criticalEnabled": true,
+    "isActive": true,
+    "createdAt": "2026-04-16T15:34:00.000Z"
+  }
+}

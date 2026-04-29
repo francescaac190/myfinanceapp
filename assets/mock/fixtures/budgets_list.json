@@ -1,0 +1,148 @@
+{
+  "data": [
+    {
+      "id": "budget_food",
+      "category": {
+        "id": "cat_food",
+        "name": "Food & Groceries",
+        "icon": "shopping_cart",
+        "color": "#EF4444"
+      },
+      "limitAmount": "400.00",
+      "spent": "320.00",
+      "remaining": "80.00",
+      "percent": 80,
+      "period": "MONTHLY",
+      "periodStart": "2026-04-01T00:00:00.000Z",
+      "periodEnd": "2026-04-30T23:59:59.999Z",
+      "state": "WARNING",
+      "warningThreshold": 70,
+      "criticalThreshold": 90,
+      "warningEnabled": true,
+      "criticalEnabled": true,
+      "isActive": true
+    },
+    {
+      "id": "budget_transport",
+      "category": {
+        "id": "cat_transport",
+        "name": "Transport",
+        "icon": "directions_car",
+        "color": "#8B5CF6"
+      },
+      "limitAmount": "200.00",
+      "spent": "140.00",
+      "remaining": "60.00",
+      "percent": 70,
+      "period": "MONTHLY",
+      "periodStart": "2026-04-01T00:00:00.000Z",
+      "periodEnd": "2026-04-30T23:59:59.999Z",
+      "state": "WARNING",
+      "warningThreshold": 70,
+      "criticalThreshold": 90,
+      "warningEnabled": true,
+      "criticalEnabled": true,
+      "isActive": true
+    },
+    {
+      "id": "budget_entertainment",
+      "category": {
+        "id": "cat_entertainment",
+        "name": "Entertainment",
+        "icon": "movie",
+        "color": "#EF4444"
+      },
+      "limitAmount": "150.00",
+      "spent": "165.00",
+      "remaining": "-15.00",
+      "percent": 110,
+      "period": "MONTHLY",
+      "periodStart": "2026-04-01T00:00:00.000Z",
+      "periodEnd": "2026-04-30T23:59:59.999Z",
+      "state": "EXCEEDED",
+      "warningThreshold": 70,
+      "criticalThreshold": 90,
+      "warningEnabled": true,
+      "criticalEnabled": true,
+      "isActive": true
+    },
+    {
+      "id": "budget_shopping",
+      "category": {
+        "id": "cat_shopping",
+        "name": "Shopping",
+        "icon": "shopping_bag",
+        "color": "#F59E0B"
+      },
+      "limitAmount": "300.00",
+      "spent": "150.00",
+      "remaining": "150.00",
+      "percent": 50,
+      "period": "MONTHLY",
+      "periodStart": "2026-04-01T00:00:00.000Z",
+      "periodEnd": "2026-04-30T23:59:59.999Z",
+      "state": "OK",
+      "warningThreshold": 70,
+      "criticalThreshold": 90,
+      "warningEnabled": true,
+      "criticalEnabled": true,
+      "isActive": true
+    },
+    {
+      "id": "budget_coffee",
+      "category": {
+        "id": "cat_coffee",
+        "name": "Coffee & Drinks",
+        "icon": "local_cafe",
+        "color": "#F59E0B"
+      },
+      "limitAmount": "60.00",
+      "spent": "48.00",
+      "remaining": "12.00",
+      "percent": 80,
+      "period": "MONTHLY",
+      "periodStart": "2026-04-01T00:00:00.000Z",
+      "periodEnd": "2026-04-30T23:59:59.999Z",
+      "state": "WARNING",
+      "warningThreshold": 70,
+      "criticalThreshold": 90,
+      "warningEnabled": true,
+      "criticalEnabled": true,
+      "isActive": true
+    },
+    {
+      "id": "budget_subscriptions",
+      "category": {
+        "id": "cat_subs",
+        "name": "Subscriptions",
+        "icon": "subscriptions",
+        "color": "#3B82F6"
+      },
+      "limitAmount": "100.00",
+      "spent": "88.00",
+      "remaining": "12.00",
+      "percent": 88,
+      "period": "MONTHLY",
+      "periodStart": "2026-04-01T00:00:00.000Z",
+      "periodEnd": "2026-04-30T23:59:59.999Z",
+      "state": "WARNING",
+      "warningThreshold": 70,
+      "criticalThreshold": 90,
+      "warningEnabled": true,
+      "criticalEnabled": true,
+      "isActive": true
+    }
+  ],
+  "summary": {
+    "monthlySpending": "942.00",
+    "totalLimits": "1210.00",
+    "overBudgetCount": 1,
+    "warningCount": 4,
+    "chartPercent": 77.9,
+    "period": "MONTHLY",
+    "periodStart": "2026-04-01T00:00:00.000Z",
+    "periodEnd": "2026-04-30T23:59:59.999Z"
+  },
+  "nextCursor": null,
+  "hasMore": false
+}

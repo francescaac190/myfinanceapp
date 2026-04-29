@@ -1,0 +1,77 @@
+{
+  "month": "2026-04",
+  "total": "2340.00",
+  "paid": "690.00",
+  "pending": "1650.00",
+  "overdue": "0.00",
+  "currency": "USD",
+  "breakdown": [
+    {
+      "categoryId": "cat_utilities",
+      "name": "Utilities",
+      "amount": "585.00",
+      "percent": 25,
+      "color": "#F59E0B"
+    },
+    {
+      "categoryId": "cat_housing",
+      "name": "Housing",
+      "amount": "890.00",
+      "percent": 38,
+      "color": "#8B5CF6"
+    },
+    {
+      "categoryId": "cat_insurance",
+      "name": "Insurance",
+      "amount": "292.01",
+      "percent": 12,
+      "color": "#10B981"
+    },
+    {
+      "categoryId": "cat_subs",
+      "name": "Subscriptions",
+      "amount": "140.40",
+      "percent": 6,
+      "color": "#3B82F6"
+    },
+    {
+      "categoryId": "cat_other",
+      "name": "Other",
+      "amount": "432.59",
+      "percent": 19,
+      "color": "#64748B"
+    }
+  ],
+  "upcoming": [
+    {
+      "id": "bill_electricity",
+      "name": "Electricity",
+      "amount": "142.00",
+      "dueDate": "2026-04-20T00:00:00.000Z",
+      "daysUntilDue": 4,
+      "status": "PENDING"
+    },
+    {
+      "id": "bill_netflix",
+      "name": "Netflix",
+      "amount": "15.99",
+      "dueDate": "2026-04-22T00:00:00.000Z",
+      "daysUntilDue": 6,
+      "status": "PENDING"
+    },
+    {
+      "id": "bill_rent",
+      "name": "Rent",
+      "amount": "890.00",
+      "dueDate": "2026-05-01T00:00:00.000Z",
+      "daysUntilDue": 15,
+      "status": "PENDING"
+    }
+  ],
+  "alert": {
+    "type": "OVERDUE",
+    "message": "Internet bill is 11 days overdue",
+    "lateFee": "278.95",
+    "dueDate": "2026-04-05T00:00:00.000Z"
+  }
+}

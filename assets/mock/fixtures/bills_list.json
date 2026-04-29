@@ -1,0 +1,98 @@
+{
+  "data": [
+    {
+      "id": "bill_electricity",
+      "name": "Electricity",
+      "amount": "142.00",
+      "dueDate": "2026-04-20T00:00:00.000Z",
+      "status": "PENDING",
+      "paidAt": null,
+      "recurrence": "MONTHLY",
+      "reminderDays": 3,
+      "autopay": false,
+      "daysUntilDue": 4,
+      "category": {
+        "id": "cat_utilities",
+        "name": "Utilities",
+        "icon": "bolt",
+        "color": "#F59E0B"
+      }
+    },
+    {
+      "id": "bill_netflix",
+      "name": "Netflix",
+      "amount": "15.99",
+      "dueDate": "2026-04-22T00:00:00.000Z",
+      "status": "PENDING",
+      "paidAt": null,
+      "recurrence": "MONTHLY",
+      "reminderDays": 2,
+      "autopay": true,
+      "daysUntilDue": 6,
+      "category": {
+        "id": "cat_subs",
+        "name": "Subscriptions",
+        "icon": "subscriptions",
+        "color": "#3B82F6"
+      }
+    },
+    {
+      "id": "bill_rent",
+      "name": "Rent",
+      "amount": "890.00",
+      "dueDate": "2026-05-01T00:00:00.000Z",
+      "status": "PENDING",
+      "paidAt": null,
+      "recurrence": "MONTHLY",
+      "reminderDays": 5,
+      "autopay": false,
+      "daysUntilDue": 15,
+      "category": {
+        "id": "cat_housing",
+        "name": "Housing",
+        "icon": "home",
+        "color": "#8B5CF6"
+      }
+    },
+    {
+      "id": "bill_insurance",
+      "name": "Insurance",
+      "amount": "292.01",
+      "dueDate": "2026-04-25T00:00:00.000Z",
+      "status": "PENDING",
+      "paidAt": null,
+      "recurrence": "MONTHLY",
+      "reminderDays": 5,
+      "autopay": false,
+      "daysUntilDue": 9,
+      "category": {
+        "id": "cat_insurance",
+        "name": "Insurance",
+        "icon": "shield",
+        "color": "#10B981"
+      }
+    },
+    {
+      "id": "bill_internet",
+      "name": "Internet",
+      "amount": "79.99",
+      "dueDate": "2026-04-05T00:00:00.000Z",
+      "status": "OVERDUE",
+      "paidAt": null,
+      "recurrence": "MONTHLY",
+      "reminderDays": 3,
+      "autopay": false,
+      "daysUntilDue": -11,
+      "overdueDays": 11,
+      "lateFee": "278.95",
+      "category": {
+        "id": "cat_utilities",
+        "name": "Utilities",
+        "icon": "wifi",
+        "color": "#F59E0B"
+      }
+    }
+  ],
+  "nextCursor": null,
+  "hasMore": false
+}

@@ -34,5 +34,6 @@ linter:
     prefer_const_constructors: false
     avoid_print: false
     public_member_api_docs: false # very_good_analysis requires doc comments on public APIs; disable if not writing a package
+    lines_longer_than_80_chars: false
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

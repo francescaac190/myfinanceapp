@@ -1,0 +1,17 @@
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "email": "alex.morgan@email.com",
+  "firstName": "Alex",
+  "lastName": "Morgan",
+  "avatarUrl": "https://cdn.example.com/avatars/alex-morgan.jpg",
+  "isPro": true,
+  "emailVerifiedAt": "2026-03-12T09:14:22.000Z",
+  "createdAt": "2026-03-12T09:10:00.000Z",
+  "settings": {
+    "currency": "USD",
+    "language": "en",
+    "notificationsEnabled": true,
+    "biometricsEnabled": true,
+    "timezone": "America/New_York"
+  }
+}

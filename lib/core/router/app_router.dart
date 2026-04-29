@@ -24,7 +24,7 @@ final appRouter = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(
-                path: '/home', builder: (context, state) => const HomeScreen()),
+                path: '/home', builder: (context, state) => const HomeScreen(),),
           ],
         ),
         StatefulShellBranch(
@@ -39,21 +39,21 @@ final appRouter = GoRouter(
           routes: [
             GoRoute(
                 path: '/savings',
-                builder: (context, state) => const SavingsScreen()),
+                builder: (context, state) => const SavingsScreen(),),
           ],
         ),
         StatefulShellBranch(
           routes: [
             GoRoute(
                 path: '/wallet',
-                builder: (context, state) => const WalletScreen()),
+                builder: (context, state) => const WalletScreen(),),
           ],
         ),
         StatefulShellBranch(
           routes: [
             GoRoute(
                 path: '/profile',
-                builder: (context, state) => const ProfileScreen()),
+                builder: (context, state) => const ProfileScreen(),),
           ],
         ),
       ],

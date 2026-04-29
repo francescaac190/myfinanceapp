@@ -1,0 +1,14 @@
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC1lZjEyMzQ1Njc4OTAiLCJlbWFpbCI6ImFsZXgubW9yZ2FuQGVtYWlsLmNvbSIsImlzUHJvIjp0cnVlLCJpYXQiOjE3NjA2MjY0MDAsImV4cCI6MTc2MDYyNzMwMH0.MOCK_SIGNATURE_FOR_DEV_ONLY",
+  "refreshToken": "rt_a1b2c3d4e5f6789012345678901234567890abcdef",
+  "expiresIn": 900,
+  "user": {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "email": "alex.morgan@email.com",
+    "firstName": "Alex",
+    "lastName": "Morgan",
+    "avatarUrl": null,
+    "isPro": true,
+    "emailVerifiedAt": "2026-03-12T09:14:22.000Z"
+  }
+}

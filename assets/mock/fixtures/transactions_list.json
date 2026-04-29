@@ -1,0 +1,127 @@
+{
+  "data": [
+    {
+      "id": "txn_001",
+      "accountId": "acc_chase_checking",
+      "accountName": "Chase Checking",
+      "description": "Amazon",
+      "merchant": "Amazon.com",
+      "amount": "-129.90",
+      "currency": "USD",
+      "type": "EXPENSE",
+      "occurredAt": "2026-04-15T14:22:10.000Z",
+      "notes": null,
+      "category": {
+        "id": "cat_shopping",
+        "name": "Shopping",
+        "icon": "shopping_bag",
+        "color": "#EF4444"
+      }
+    },
+    {
+      "id": "txn_002",
+      "accountId": "acc_chase_checking",
+      "accountName": "Chase Checking",
+      "description": "Starbucks",
+      "merchant": "Starbucks",
+      "amount": "-8.50",
+      "currency": "USD",
+      "type": "EXPENSE",
+      "occurredAt": "2026-04-15T08:05:00.000Z",
+      "notes": "Morning coffee",
+      "category": {
+        "id": "cat_coffee",
+        "name": "Coffee & Drinks",
+        "icon": "local_cafe",
+        "color": "#F59E0B"
+      }
+    },
+    {
+      "id": "txn_003",
+      "accountId": "acc_chase_checking",
+      "accountName": "Chase Checking",
+      "description": "Salary Deposit",
+      "merchant": "Merteck Payroll",
+      "amount": "+4200.00",
+      "currency": "USD",
+      "type": "INCOME",
+      "occurredAt": "2026-04-12T09:00:00.000Z",
+      "notes": null,
+      "category": {
+        "id": "cat_salary",
+        "name": "Salary",
+        "icon": "work",
+        "color": "#10B981"
+      }
+    },
+    {
+      "id": "txn_004",
+      "accountId": "acc_chase_checking",
+      "accountName": "Chase Checking",
+      "description": "Uber ride",
+      "merchant": "Uber",
+      "amount": "-18.40",
+      "currency": "USD",
+      "type": "EXPENSE",
+      "occurredAt": "2026-04-11T19:45:00.000Z",
+      "notes": null,
+      "category": {
+        "id": "cat_transport",
+        "name": "Transport",
+        "icon": "directions_car",
+        "color": "#8B5CF6"
+      }
+    },
+    {
+      "id": "txn_005",
+      "accountId": "acc_chase_checking",
+      "accountName": "Chase Checking",
+      "description": "Whole Foods",
+      "merchant": "Whole Foods Market",
+      "amount": "-84.30",
+      "currency": "USD",
+      "type": "EXPENSE",
+      "occurredAt": "2026-04-10T16:12:00.000Z",
+      "notes": "Weekly groceries",
+      "category": {
+        "id": "cat_food",
+        "name": "Food & Groceries",
+        "icon": "shopping_cart",
+        "color": "#EF4444"
+      }
+    },
+    {
+      "id": "txn_006",
+      "accountId": "acc_chase_checking",
+      "accountName": "Chase Checking",
+      "description": "Netflix",
+      "merchant": "Netflix",
+      "amount": "-15.99",
+      "currency": "USD",
+      "type": "EXPENSE",
+      "occurredAt": "2026-04-09T00:01:00.000Z",
+      "notes": null,
+      "category": {
+        "id": "cat_subs",
+        "name": "Subscriptions",
+        "icon": "subscriptions",
+        "color": "#3B82F6"
+      }
+    },
+    {
+      "id": "txn_007",
+      "accountId": "acc_ally_savings",
+      "accountName": "Ally Savings",
+      "description": "Transfer from Chase",
+      "merchant": null,
+      "amount": "+500.00",
+      "currency": "USD",
+      "type": "TRANSFER",
+      "occurredAt": "2026-04-08T12:00:00.000Z",
+      "notes": "Emergency fund contribution",
+      "category": null
+    }
+  ],
+  "nextCursor": "eyJpZCI6InR4bl8wMDciLCJvY2N1cnJlZEF0IjoiMjAyNi0wNC0wOFQxMjowMDowMCJ9",
+  "hasMore": true
+}
