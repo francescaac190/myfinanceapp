@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:myfinanceapp/core/router/app_router.dart';
-import 'package:myfinanceapp/core/theme/app_colors.dart';
+import 'core/index.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 

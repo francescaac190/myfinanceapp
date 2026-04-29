@@ -8,3 +8,4 @@ export 'theme/app_spacing.dart';
 export 'theme/app_text_styles.dart';
 export 'widgets/gradient_card.dart';
 export 'widgets/pie_cart.dart';
+export 'di/injection.dart';
