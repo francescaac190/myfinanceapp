@@ -12,8 +12,6 @@ class AppShell extends StatelessWidget {
     return Scaffold(
       body: child,
       bottomNavigationBar: AppBottomBar(currentIndex: currentIndex),
-      // floatingActionButton: AppFloatingButton(),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
