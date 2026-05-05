@@ -33,6 +33,7 @@ class _SignupScreenState extends State<SignupScreen> {
           ),
         );
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthBloc, AuthState>(
@@ -118,18 +119,6 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ),
                   AppSpacing.gapSm,
-                  TextButton(
-                    onPressed: () {
-                      context.pop();
-                    },
-                    child: Text(
-                      'Already have an account? Log in',
-                      style: AppTextStyles.bodyMedium.copyWith(
-                          color: AppColors.accentBlue,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14),
-                    ),
-                  ),
                   AppSpacing.gapSm,
                   AppButton.primary(
                     label: 'Create account',
@@ -138,6 +127,29 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ],
               ),
+            ),
+          ),
+          bottomNavigationBar: TextButton(
+            onPressed: () {
+              context.pop();
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Already have an account? ',
+                  style: AppTextStyles.bodyMedium.copyWith(
+                    color: AppColors.textMuted,
+                  ),
+                ),
+                Text(
+                  'Log in',
+                  style: AppTextStyles.bodyMedium.copyWith(
+                    color: AppColors.accentBlue,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
             ),
           ),
         );
