@@ -5,6 +5,7 @@ import 'package:myfinanceapp/features/home/domain/entities/home_overview_entity.
 import 'package:myfinanceapp/features/home/presentation/bloc/home_overview_bloc.dart';
 import 'package:myfinanceapp/features/home/presentation/widgets/balance_card.dart';
 import 'package:myfinanceapp/features/home/presentation/widgets/home_header.dart';
+import 'package:myfinanceapp/features/home/presentation/widgets/quick_actions.dart';
 import 'package:myfinanceapp/features/home/presentation/widgets/spending_balance.dart';
 import 'package:myfinanceapp/features/home/presentation/widgets/spending_card.dart';
 import 'package:myfinanceapp/features/home/presentation/widgets/transaction_list.dart';
@@ -142,6 +143,8 @@ class _HomeOverviewContent extends StatelessWidget {
               SpendingCardList(
                 categories: overview.spendingThisMonth.categories,
               ),
+              AppSpacing.gapMd,
+              QuickActions(),
               AppSpacing.gapLg,
               TransactionList(transactions: overview.recentTransactions),
             ],
