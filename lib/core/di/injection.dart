@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
+import 'package:myfinanceapp/core/api/api_error_interceptor.dart';
 import 'package:myfinanceapp/core/api/auth_interceptor.dart';
 import 'package:myfinanceapp/core/api/mock_api_service.dart';
 import 'package:myfinanceapp/features/auth/data/datasources/auth_local_datasource.dart';
@@ -34,6 +35,7 @@ Future<void> setupDependencies() async {
         receiveTimeout: const Duration(seconds: 10),
       ));
       dio.interceptors.add(AuthInterceptor(getIt(), dio));
+      dio.interceptors.add(ApiErrorInterceptor());
       if (kDebugMode) {
         dio.interceptors.add(
           LogInterceptor(

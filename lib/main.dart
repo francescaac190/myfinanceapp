@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:myfinanceapp/core/index.dart';
+import 'package:myfinanceapp/features/auth/data/datasources/auth_local_datasource.dart';
 import 'package:myfinanceapp/features/auth/presentation/bloc/auth_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupDependencies();
+  await getIt<AuthLocalDataSource>().clearTokens();
   getIt<AuthBloc>().add(AuthBootstrapRequested());
   runApp(const MyApp());
 }

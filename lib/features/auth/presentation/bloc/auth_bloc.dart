@@ -1,8 +1,13 @@
 // lib/features/auth/presentation/bloc/auth_bloc.dart
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:myfinanceapp/core/api/api_exception.dart';
 import '../../domain/entities/user.dart';
 import '../../domain/repositories/auth_repository.dart';
+
+String _errorMessage(Object err) => err is ApiException
+    ? err.message
+    : 'Something went wrong. Please try again.';
 
 sealed class AuthEvent extends Equatable {
   @override
@@ -82,7 +87,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final user = await _repo.login(e.email, e.password);
       emit(AuthAuthenticated(user));
     } catch (err) {
-      emit(AuthUnauthenticated(err.toString()));
+      emit(AuthUnauthenticated(_errorMessage(err)));
     }
   }
 
@@ -98,7 +103,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       );
       emit(AuthAuthenticated(user));
     } catch (err) {
-      emit(AuthUnauthenticated(err.toString()));
+      emit(AuthUnauthenticated(_errorMessage(err)));
     }
   }
 
