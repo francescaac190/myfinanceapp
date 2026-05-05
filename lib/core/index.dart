@@ -14,6 +14,7 @@ export 'theme/app_spacing.dart';
 export 'theme/app_text_styles.dart';
 export 'utils/validators.dart';
 export 'widgets/app_button.dart';
+export 'widgets/app_skeleton.dart';
 export 'widgets/app_text_field.dart';
 export 'widgets/app_toast.dart';
 export 'widgets/gradient_card.dart';

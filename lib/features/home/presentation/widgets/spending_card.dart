@@ -1,20 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:myfinanceapp/core/index.dart';
+import 'package:myfinanceapp/features/home/domain/entities/home_overview_entity.dart';
 
 class SpendingCardList extends StatelessWidget {
   const SpendingCardList({
+    required this.categories,
     super.key,
   });
 
+  final List<CategoryElement> categories;
+
   @override
   Widget build(BuildContext context) {
+    if (categories.isEmpty) {
+      return Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: AppColors.bgCard,
+          borderRadius: AppRadius.allMd,
+          border: Border.all(color: AppColors.borderCard),
+        ),
+        child: Text(
+          'No spending yet',
+          style: AppTextStyles.bodySmall.copyWith(
+            color: AppColors.textMuted,
+          ),
+        ),
+      );
+    }
+
+    final visibleCategories = categories.take(3).toList();
+
     return Row(
-      children: const [
-        SpendingCard(),
-        AppSpacing.hGapSm,
-        SpendingCard(),
-        AppSpacing.hGapSm,
-        SpendingCard(),
+      children: [
+        for (var i = 0; i < visibleCategories.length; i++) ...[
+          SpendingCard(category: visibleCategories[i]),
+          if (i != visibleCategories.length - 1) AppSpacing.hGapSm,
+        ],
       ],
     );
   }
@@ -22,8 +45,11 @@ class SpendingCardList extends StatelessWidget {
 
 class SpendingCard extends StatelessWidget {
   const SpendingCard({
+    required this.category,
     super.key,
   });
+
+  final CategoryElement category;
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +67,15 @@ class SpendingCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Food',
+              category.name,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: AppTextStyles.bodySmall
                   .copyWith(color: AppColors.textSecondary),
             ),
             AppSpacing.gapXs,
             Text(
-              r'$89.50',
+              '\$${category.amount}',
               style: AppTextStyles.titleSmall
                   .copyWith(color: AppColors.accentBlue, fontSize: 16),
             ),

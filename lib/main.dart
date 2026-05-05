@@ -8,20 +8,22 @@ import 'package:myfinanceapp/features/auth/presentation/bloc/auth_bloc.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupDependencies();
-  await getIt<AuthLocalDataSource>().clearTokens();
+  final hasToken =
+      (await getIt<AuthLocalDataSource>().getAccessToken()) != null;
   getIt<AuthBloc>().add(AuthBootstrapRequested());
-  runApp(const MyApp());
+  runApp(MyApp(initialLocation: hasToken ? '/home' : '/login'));
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({required this.initialLocation, super.key});
+  final String initialLocation;
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  late final _router = buildRouter();
+  late final _router = buildRouter(initialLocation: widget.initialLocation);
 
   @override
   Widget build(BuildContext context) {

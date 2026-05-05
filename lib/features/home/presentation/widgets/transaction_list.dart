@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:myfinanceapp/core/index.dart';
+import 'package:myfinanceapp/features/home/domain/entities/home_overview_entity.dart';
 
 class TransactionList extends StatelessWidget {
   const TransactionList({
+    required this.transactions,
     super.key,
   });
+
+  final List<RecentTransaction> transactions;
 
   @override
   Widget build(BuildContext context) {
@@ -40,35 +44,57 @@ class TransactionList extends StatelessWidget {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              TransactionItem(
-                title: 'Starbucks',
-                subtitle: 'Today, 8:30 AM',
-                amount: r'-$5.75',
-                icon: Icons.local_cafe_outlined,
-                iconColor: AppColors.accentGreen,
-              ),
-              TransactionItem(
-                title: 'Amazon',
-                subtitle: 'Yesterday, 3:15 PM',
-                amount: r'-$120.00',
-                icon: Icons.shopping_cart_outlined,
-                iconColor: AppColors.accentRed,
-              ),
-
-              // error case
-              // Center(
-              //   child: Text('No transactions yet',
-              //       style: TextStyle(
-              //         fontSize: 14,
-              //         color: AppColors.textMuted,
-              //     )),
-            ],
+            children: transactions.isEmpty
+                ? [
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Text(
+                        'No transactions yet',
+                        style: AppTextStyles.bodySmall.copyWith(
+                          color: AppColors.textMuted,
+                        ),
+                      ),
+                    ),
+                  ]
+                : transactions
+                    .map(
+                      (transaction) => TransactionItem(
+                        title: transaction.description,
+                        subtitle: _formatDate(transaction.occurredAt),
+                        amount: _formatAmount(transaction),
+                        icon: _iconForType(transaction.type),
+                        iconColor: _colorForType(transaction.type),
+                        amountColor: _colorForType(transaction.type),
+                      ),
+                    )
+                    .toList(),
           ),
         ),
       ],
     );
   }
+}
+
+String _formatDate(DateTime date) {
+  final local = date.toLocal();
+  final hour = local.hour.toString().padLeft(2, '0');
+  final minute = local.minute.toString().padLeft(2, '0');
+  return '${local.month}/${local.day}/${local.year}, $hour:$minute';
+}
+
+String _formatAmount(RecentTransaction transaction) {
+  final prefix = transaction.type == 'EXPENSE' ? '-' : '+';
+  return '$prefix\$${transaction.amount}';
+}
+
+IconData _iconForType(String type) {
+  return type == 'EXPENSE'
+      ? Icons.arrow_upward_rounded
+      : Icons.arrow_downward_rounded;
+}
+
+Color _colorForType(String type) {
+  return type == 'EXPENSE' ? AppColors.accentRed : AppColors.accentGreen;
 }
 
 class TransactionItem extends StatelessWidget {
@@ -78,6 +104,7 @@ class TransactionItem extends StatelessWidget {
     required this.amount,
     required this.icon,
     required this.iconColor,
+    this.amountColor = AppColors.accentRed,
     super.key,
   });
   final String title;
@@ -85,6 +112,7 @@ class TransactionItem extends StatelessWidget {
   final String amount;
   final IconData icon;
   final Color iconColor;
+  final Color amountColor;
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +142,7 @@ class TransactionItem extends StatelessWidget {
         style: AppTextStyles.bodySmall.copyWith(
           fontSize: 14,
           fontWeight: FontWeight.bold,
-          color: AppColors.accentRed,
+          color: amountColor,
         ),
       ),
     );

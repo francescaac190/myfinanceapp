@@ -5,9 +5,11 @@ import 'package:myfinanceapp/core/index.dart';
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
     required this.userName,
+    required this.timeOfDay,
     super.key,
   });
   final String userName;
+  final String timeOfDay;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class HomeHeader extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Good Morning,',
+              '${_greetingLabel(timeOfDay)},',
               style:
                   AppTextStyles.bodyLarge.copyWith(color: AppColors.textMuted),
             ),
@@ -51,5 +53,20 @@ class HomeHeader extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+String _greetingLabel(String timeOfDay) {
+  switch (timeOfDay) {
+    case 'morning':
+      return 'Good Morning';
+    case 'afternoon':
+      return 'Good Afternoon';
+    case 'evening':
+      return 'Good Evening';
+    case 'night':
+      return 'Good Night';
+    default:
+      return 'Hello';
   }
 }

@@ -10,6 +10,10 @@ import 'package:myfinanceapp/features/auth/data/datasources/auth_remote_datasour
 import 'package:myfinanceapp/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:myfinanceapp/features/auth/domain/repositories/auth_repository.dart';
 import 'package:myfinanceapp/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:myfinanceapp/features/home/data/datasources/home_overview_remote_datasource.dart';
+import 'package:myfinanceapp/features/home/data/repositories/home_overview_repository_impl.dart';
+import 'package:myfinanceapp/features/home/domain/repositories/home_overview_repository.dart';
+import 'package:myfinanceapp/features/home/presentation/bloc/home_overview_bloc.dart';
 
 const _useMock = bool.fromEnvironment('USE_MOCK');
 
@@ -34,7 +38,14 @@ Future<void> setupDependencies() async {
         connectTimeout: const Duration(seconds: 10),
         receiveTimeout: const Duration(seconds: 10),
       ));
-      dio.interceptors.add(AuthInterceptor(getIt(), dio));
+      dio.interceptors.add(
+        AuthInterceptor(
+          getIt(),
+          dio,
+          onSessionExpired: () =>
+              getIt<AuthBloc>().add(AuthSessionExpired()),
+        ),
+      );
       dio.interceptors.add(ApiErrorInterceptor());
       if (kDebugMode) {
         dio.interceptors.add(
@@ -57,6 +68,13 @@ Future<void> setupDependencies() async {
       () => AuthRepositoryImpl(getIt(), getIt()),
     )
     ..registerLazySingleton<AuthBloc>(
-      () => AuthBloc(getIt())..add(AuthBootstrapRequested()),
-    );
+      () => AuthBloc(getIt()),
+    )
+    ..registerLazySingleton(
+      () => HomeOverviewRemoteDataSource(getIt<Dio>()),
+    )
+    ..registerLazySingleton<HomeOverviewRepository>(
+      () => HomeOverviewRepositoryImpl(getIt()),
+    )
+    ..registerFactory(() => HomeOverviewBloc(getIt()));
 }

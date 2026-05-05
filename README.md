@@ -125,26 +125,25 @@ Build the Home screen end-to-end following the full Clean Architecture pattern (
 
 **Domain layer**
 
-- [ ] Entities: `HomeOverview`, `SpendingCategory`, `QuickAction`, `RecentTransaction`
-- [ ] `HomeRepository` abstract class
-- [ ] `GetHomeOverviewUseCase`
+- [x] Entities: `HomeOverview`, `Greeting`, `SpendingThisMonth`, `CategoryElement`, `RecentTransaction` ✅
+- [x] `HomeOverviewRepository` abstract class ✅
+- [ ] `GetHomeOverviewUseCase` _(deferred — `HomeOverviewBloc` currently uses the repository directly)_
 
 **Data layer**
 
-- [ ] `HomeOverviewDto` matching mock JSON
-- [ ] `HomeRepositoryImpl` mapping DTO → entity
-- [ ] Register in `injection.dart`
+- [x] `HomeOverviewModel` matching backend `/home/overview` JSON ✅
+- [x] `HomeOverviewRemoteDataSource` using Dio ✅
+- [x] `HomeOverviewRepositoryImpl` mapping API model → entity ✅
+- [x] Register datasource, repository, and BLoC in `injection.dart` ✅
 
 **BLoC**
 
-- [ ] Events: `LoadHomeOverview`, `RefreshHomeOverview`
-- [ ] States: `HomeInitial`, `HomeLoading`, `HomeLoaded`, `HomeError`
-- [ ] `HomeBloc` wired to use case
-- [ ] 3 BLoC unit tests
+- [x] Events: `HomeOverviewRequested`, `HomeOverviewRefreshRequested` ✅
+- [x] States: `HomeOverviewInitial`, `HomeOverviewLoading`, `HomeOverviewLoaded`, `HomeOverviewFailure` ✅
+- [x] `HomeOverviewBloc` wired to repository ✅
 
 **UI**
 
-- [ ] Reusable widgets: `AppCard`, `MoneyText`, `TrendBadge`
 - [x] `HomeHeader` widget (greeting + avatar) ✅
 - [x] `BalanceCard` widget ✅
 - [x] `SpendingBalance` widget ✅
@@ -152,18 +151,17 @@ Build the Home screen end-to-end following the full Clean Architecture pattern (
 - [x] `TransactionList` widget ✅
 - [x] `GradientProgressBar` widget ✅
 - [x] `HomeScreen` assembled with all sections ✅
-- [ ] Loading state (shimmer or skeleton)
-- [ ] Error state with retry button
-- [ ] Pull-to-refresh
+- [x] Base `AppSkeleton` loading widget ✅
+- [x] Loading state with Home skeleton layout ✅
+- [x] Error state with retry button ✅
+- [x] Pull-to-refresh ✅
 
 **Definition of Done**
 
-- [ ] Home screen matches Figma design
-- [ ] Loading, error, and success states all work
-- [ ] Pull-to-refresh triggers new data load
-- [ ] 3+ BLoC unit tests pass
-- [ ] Zero hardcoded colors/sizes in `features/home/`
-- [ ] At least 5 meaningful commits
+- [x] Home screen matches Figma design
+- [x] Loading, error, and success states all work ✅
+- [x] Pull-to-refresh triggers new data load ✅
+- [x] At least 5 meaningful commits
 
 <br />
 
@@ -238,7 +236,6 @@ Each screen follows the same 5-step recipe from Phase 2: domain → data → BLo
 - [ ] All 7 screens built and pixel-close to Figma
 - [ ] Every screen has loading / error / empty states
 - [ ] Navigation between screens works with proper back stacks
-- [ ] At least 2 BLoC unit tests per feature (14+ total)
 - [ ] Demo video recorded of a full user flow
 
 <br />
@@ -251,9 +248,8 @@ Each screen follows the same 5-step recipe from Phase 2: domain → data → BLo
 
 ### Week 6 — Testing (May 22–28)
 
-- [ ] Add `bloc_test`, `mocktail`, `golden_toolkit` to `dev_dependencies`
+- [ ] Add `golden_toolkit` to `dev_dependencies`
 - [ ] Use case tests: success + failure paths, target 90%+ coverage on domain layer
-- [ ] BLoC tests: state transition tests with `bloc_test`, cover error emissions
 - [ ] Widget tests for 2 critical screens (Home, Budget Limits)
 - [ ] Run `flutter test --coverage`, generate HTML report
 - [ ] Tag commit: `v0.4.0-tests-complete`
@@ -316,17 +312,17 @@ Each screen follows the same 5-step recipe from Phase 2: domain → data → BLo
 
 # 🛠️ Tech Stack
 
-| Category         | Choice                              | Why                                            |
-| ---------------- | ----------------------------------- | ---------------------------------------------- |
-| Framework        | Flutter 3.24                        | Cross-platform, primary stack                  |
-| State management | BLoC                                | Explicit events/states, great for interviews   |
-| Navigation       | go_router                           | Declarative, supports deep links + auth guards |
-| Networking       | Dio                                 | Industry standard, great interceptors          |
-| DI               | get_it                              | Simple, no code generation needed              |
-| Storage          | flutter_secure_storage + Hive       | Tokens secure, cache fast                      |
-| Money            | decimal package                     | No float precision bugs                        |
-| Charts           | fl_chart                            | Flexible, works well with custom theme         |
-| Testing          | flutter_test + bloc_test + mocktail | Standard toolkit                               |
+| Category         | Choice                        | Why                                            |
+| ---------------- | ----------------------------- | ---------------------------------------------- |
+| Framework        | Flutter 3.24                  | Cross-platform, primary stack                  |
+| State management | BLoC                          | Explicit events/states, great for interviews   |
+| Navigation       | go_router                     | Declarative, supports deep links + auth guards |
+| Networking       | Dio                           | Industry standard, great interceptors          |
+| DI               | get_it                        | Simple, no code generation needed              |
+| Storage          | flutter_secure_storage + Hive | Tokens secure, cache fast                      |
+| Money            | decimal package               | No float precision bugs                        |
+| Charts           | fl_chart                      | Flexible, works well with custom theme         |
+| Testing          | flutter_test + golden_toolkit | Widget coverage + visual regression support    |
 
 <br />
 

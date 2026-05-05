@@ -40,6 +40,8 @@ class AuthLogoutAllRequested extends AuthEvent {}
 
 class AuthRefreshUserRequested extends AuthEvent {}
 
+class AuthSessionExpired extends AuthEvent {}
+
 sealed class AuthState extends Equatable {
   const AuthState();
   @override
@@ -72,13 +74,23 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthLogoutRequested>(_onLogout);
     on<AuthLogoutAllRequested>(_onLogoutAll);
     on<AuthRefreshUserRequested>(_onRefreshUser);
+    on<AuthSessionExpired>(_onSessionExpired);
+  }
+
+  Future<void> _onSessionExpired(_, Emitter<AuthState> emit) async {
+    if (state is AuthUnauthenticated) return;
+    emit(const AuthUnauthenticated('Session expired. Please sign in again.'));
   }
   final AuthRepository _repo;
 
   Future<void> _onBootstrap(_, Emitter<AuthState> emit) async {
     emit(AuthLoading());
-    final user = await _repo.bootstrap();
-    emit(user == null ? const AuthUnauthenticated() : AuthAuthenticated(user));
+    try {
+      final user = await _repo.bootstrap();
+      emit(user == null ? const AuthUnauthenticated() : AuthAuthenticated(user));
+    } catch (_) {
+      emit(const AuthUnauthenticated());
+    }
   }
 
   Future<void> _onLogin(AuthLoginRequested e, Emitter<AuthState> emit) async {

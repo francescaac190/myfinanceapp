@@ -5,8 +5,11 @@ import 'package:myfinanceapp/features/home/presentation/widgets/gradient_progres
 
 class SpendingBalance extends StatelessWidget {
   const SpendingBalance({
+    required this.total,
     super.key,
   });
+
+  final String total;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class SpendingBalance extends StatelessWidget {
             Text('Spending this month', style: AppTextStyles.titleSmall),
             AppSpacing.gapSm,
             Text(
-              r'$567.89 / $1,000',
+              '\$$total spent',
               style: AppTextStyles.bodySmall.copyWith(
                 color: AppColors.textMuted,
               ),
@@ -26,7 +29,7 @@ class SpendingBalance extends StatelessWidget {
           ],
         ),
         AppSpacing.gapSm,
-        GradientProgressBar(progress: 0.61),
+        GradientProgressBar(progress: 0),
         AppSpacing.gapSm,
       ],
     );
