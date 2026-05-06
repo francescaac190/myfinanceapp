@@ -10,6 +10,10 @@ import 'package:myfinanceapp/features/auth/data/datasources/auth_remote_datasour
 import 'package:myfinanceapp/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:myfinanceapp/features/auth/domain/repositories/auth_repository.dart';
 import 'package:myfinanceapp/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:myfinanceapp/features/bills/data/datasources/bills_remote_datasource.dart';
+import 'package:myfinanceapp/features/bills/data/repositories/bills_repository_impl.dart';
+import 'package:myfinanceapp/features/bills/domain/repositories/bills_repository.dart';
+import 'package:myfinanceapp/features/bills/presentation/bloc/bills_bloc.dart';
 import 'package:myfinanceapp/features/home/data/datasources/home_overview_remote_datasource.dart';
 import 'package:myfinanceapp/features/home/data/repositories/home_overview_repository_impl.dart';
 import 'package:myfinanceapp/features/home/domain/repositories/home_overview_repository.dart';
@@ -76,5 +80,12 @@ Future<void> setupDependencies() async {
     ..registerLazySingleton<HomeOverviewRepository>(
       () => HomeOverviewRepositoryImpl(getIt()),
     )
-    ..registerFactory(() => HomeOverviewBloc(getIt()));
+    ..registerFactory(() => HomeOverviewBloc(getIt()))
+    ..registerLazySingleton(
+      () => BillsRemoteDataSource(getIt<Dio>()),
+    )
+    ..registerLazySingleton<BillsRepository>(
+      () => BillsRepositoryImpl(getIt()),
+    )
+    ..registerFactory(() => BillsBloc(getIt()));
 }

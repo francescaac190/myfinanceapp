@@ -1,9 +1,88 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myfinanceapp/core/index.dart';
+import 'package:myfinanceapp/features/bills/domain/entities/bills.dart';
+import 'package:myfinanceapp/features/bills/presentation/bloc/bills_bloc.dart';
 import 'package:myfinanceapp/features/bills/presentation/widgets/billls_list.dart';
 
 class BillsScreen extends StatelessWidget {
   const BillsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<BillsBloc, BillsState>(
+      builder: (context, state) {
+        switch (state.status) {
+          case BillsStatus.initial:
+          case BillsStatus.loading:
+            return const _BillsSkeleton();
+          case BillsStatus.failure:
+            return _BillsError(
+              message: state.errorMessage ?? 'Something went wrong.',
+            );
+          case BillsStatus.success:
+            return _BillsContent(bills: state.bills);
+        }
+      },
+    );
+  }
+}
+
+class _BillsSkeleton extends StatelessWidget {
+  const _BillsSkeleton();
+
+  @override
+  Widget build(BuildContext context) {
+    return const SafeArea(
+      bottom: false,
+      child: SingleChildScrollView(
+        physics: AlwaysScrollableScrollPhysics(),
+        padding: AppSpacing.screen,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AppSkeleton(width: 120, height: 16),
+                      AppSpacing.gapSm,
+                      AppSkeleton(width: 180, height: 28),
+                    ],
+                  ),
+                ),
+                AppSpacing.gapMd,
+                CircleAvatar(radius: 20),
+              ],
+            ),
+            AppSpacing.gapLg,
+            // const BillsListSkeleton(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _BillsError extends StatelessWidget {
+  const _BillsError({required this.message});
+
+  final String message;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(message),
+    );
+  }
+}
+
+class _BillsContent extends StatelessWidget {
+  const _BillsContent({required this.bills});
+
+  final List<Bills> bills;
 
   @override
   Widget build(BuildContext context) {

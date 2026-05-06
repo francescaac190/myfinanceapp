@@ -7,6 +7,7 @@ import 'package:myfinanceapp/core/index.dart';
 import 'package:myfinanceapp/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:myfinanceapp/features/auth/presentation/screens/login_screen.dart';
 import 'package:myfinanceapp/features/auth/presentation/screens/signup_screen.dart';
+import 'package:myfinanceapp/features/bills/presentation/bloc/bills_bloc.dart';
 import 'package:myfinanceapp/features/bills/presentation/screens/bills_screen.dart';
 import 'package:myfinanceapp/features/home/presentation/bloc/home_overview_bloc.dart';
 import 'package:myfinanceapp/features/home/presentation/screens/home_screen.dart';
@@ -71,9 +72,12 @@ GoRouter buildRouter({String initialLocation = '/login'}) {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: '/bills',
-                builder: (context, state) => const BillsScreen(),
-              ),
+                  path: '/bills',
+                  builder: (context, state) => BlocProvider(
+                        create: (_) =>
+                            getIt<BillsBloc>()..add(const BillsRequested()),
+                        child: const BillsScreen(),
+                      )),
             ],
           ),
           StatefulShellBranch(
