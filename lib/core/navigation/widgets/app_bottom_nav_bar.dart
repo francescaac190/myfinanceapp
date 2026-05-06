@@ -32,31 +32,34 @@ class AppBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      minimum: const EdgeInsets.only(bottom: 16),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: ClipRRect(
-          borderRadius: AppRadius.allFull,
-          child: Container(
-            decoration: BoxDecoration(
-              color: AppColors.bgCardAlt,
-              borderRadius: AppRadius.allFull,
-              border: Border.all(
-                color: Colors.white.withValues(alpha: 0.08),
+    return ColoredBox(
+      color: Colors.transparent,
+      child: SafeArea(
+        minimum: const EdgeInsets.only(bottom: 16),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: ClipRRect(
+            borderRadius: AppRadius.allFull,
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.bgCardAlt,
+                borderRadius: AppRadius.allFull,
+                border: Border.all(
+                  color: Colors.white.withValues(alpha: 0.08),
+                ),
               ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(_items.length, (i) {
-                return Expanded(
-                  child: _NavItem(
-                    item: _items[i],
-                    isSelected: currentIndex == i,
-                    onTap: () => _onTap(context, i),
-                  ),
-                );
-              }),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(_items.length, (i) {
+                  return Expanded(
+                    child: _NavItem(
+                      item: _items[i],
+                      isSelected: currentIndex == i,
+                      onTap: () => _onTap(context, i),
+                    ),
+                  );
+                }),
+              ),
             ),
           ),
         ),

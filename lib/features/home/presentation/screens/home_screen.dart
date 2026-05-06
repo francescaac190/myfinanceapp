@@ -147,6 +147,8 @@ class _HomeOverviewContent extends StatelessWidget {
               QuickActions(),
               AppSpacing.gapLg,
               TransactionList(transactions: overview.recentTransactions),
+              AppSpacing.gapXxl,
+              AppSpacing.gapXxl,
             ],
           ),
         ),
